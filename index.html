@@ -188,6 +188,8 @@
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
         .gallery-item:hover {
             transform: translateY(-5px);
@@ -195,7 +197,8 @@
         .gallery-item img {
             width: 100%;
             height: 320px;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #f3f0ea;
             display: block;
         }
         .item-info {
@@ -204,6 +207,7 @@
             font-weight: bold;
             color: #333;
             border-top: 1px solid #f0f0f0;
+            background-color: #fff;
         }
 
         /* 작가 소개 섹션 */
@@ -264,7 +268,7 @@
             font-weight: bold;
             color: #b23b3b;
             display: inline-block;
-            width: 100px;
+            width: 80px;
         }
         .form-group {
             margin-bottom: 20px;
@@ -358,7 +362,7 @@
         </div>
     </section>
 
-    <!-- 2. 작품 갤러리 섹션 (1~15번 사진) -->
+    <!-- 2. 작품 갤러리 섹션 -->
     <section id="gallery" class="section-container">
         <div class="section-header">
             <h2>서예 작품 갤러리</h2>
@@ -391,7 +395,7 @@
         </div>
     </section>
 
-    <!-- 3. 작가 소개 섹션 (김제운 작가님 약력) -->
+    <!-- 3. 작가 소개 섹션 -->
     <section id="about" class="section-container">
         <div class="section-header">
             <h2>작가 소개</h2>
@@ -424,22 +428,20 @@
         </div>
     </section>
 
-    <!-- 4. 작품 문의 섹션 (소장가 권영자 님 문의 양식) -->
+    <!-- 4. 작품 문의 섹션 -->
     <section id="contact" class="section-container">
         <div class="section-header">
-            <h2>작품 문의 & 연락처</h2>
-            <p>서예 작품 소장, 맞춤 서예 제작 및 기타 문의 사항을 남겨주세요.</p>
+            <h2>작품 문의</h2>
+            <p>서예 작품 소장 및 기타 문의 사항을 소장가에게 남겨주세요.</p>
         </div>
 
         <div class="contact-card">
             <div>
-                <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #222;">서예실 및 소장가 안내</h3>
+                <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #222;">소장가 안내</h3>
                 <p style="color: #666; margin-bottom: 20px;">
-                    원당 김제운 작가님의 작품 감상 및 소장 문의는 아래 연락처 또는 문의 양식을 통해 하실 수 있습니다.
+                    원당 김제운 작가님의 소중한 작품 소장 및 전시 관련 문의는 아래 양식을 통해 편하게 남겨주시기 바랍니다.
                 </p>
                 <ul class="contact-info-list">
-                    <li><span class="contact-label">서예실 위치</span> 서울시 종로구 종로5가 182-6 원당서예학원 (종로5가역 6번 출구)</li>
-                    <li><span class="contact-label">서예실 전화</span> 02-2265-1508, 02-2267-5529</li>
                     <li><span class="contact-label">소장가</span> 권영자</li>
                 </ul>
             </div>
@@ -476,7 +478,7 @@
 
             items.forEach(item => {
                 if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
+                    item.style.display = 'flex';
                 } else {
                     item.style.display = 'none';
                 }
