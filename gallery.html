@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Seoye Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Noto Serif KR', serif, sans-serif;
+            background-color: #f7f5f0;
+            color: #222;
+            text-align: center;
+            padding: 20px;
+        }
+        header {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        /* 카테고리 버튼 스타일 */
+        .category-container {
+            margin-bottom: 40px;
+        }
+        .cat-btn {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .cat-btn.active, .cat-btn:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        /* 작품 갤러리 그리드 */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .artwork-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            padding: 15px;
+            transition: transform 0.2s;
+        }
+        .artwork-card:hover {
+            transform: translateY(-5px);
+        }
+        .artwork-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+        .artwork-title {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* 탭 필터링 숨김 클래스 */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>K-Seoye Gallery</h1>
+        <p class="subtitle">붓끝으로 피워낸 墨香, 삶의 깊이와 평안을 담다</p>
+        
+        <!-- 카테고리 선택 버튼 (전체, 족자, 지본, 액자) -->
+        <div class="category-container">
+            <button class="cat-btn active" onclick="filterGallery('all')">전체 보기</button>
+            <button class="cat-btn" onclick="filterGallery('jokja')">족자 작품</button>
+            <button class="cat-btn" onclick="filterGallery('jibon')">지본 작품</button>
+            <button class="cat-btn" onclick="filterGallery('akja')">액자 작품</button>
+        </div>
+    </header>
+
+    <!-- 작품 목록 (1~15) -->
+    <main class="gallery-container">
+        <!-- 1~3번: 족자 -->
+        <div class="artwork-card item-jokja"><img src="1.jpg" alt="작품 1"><div class="artwork-title">작품 1 (족자)</div></div>
+        <div class="artwork-card item-jokja"><img src="2.jpg" alt="작품 2"><div class="artwork-title">작품 2 (족자)</div></div>
+        <div class="artwork-card item-jokja"><img src="3.jpg" alt="작품 3"><div class="artwork-title">작품 3 (족자)</div></div>
+
+        <!-- 4~12번: 지본 (화선지) -->
+        <div class="artwork-card item-jibon"><img src="4.jpg" alt="작품 4"><div class="artwork-title">작품 4 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="5.jpg" alt="작품 5"><div class="artwork-title">작품 5 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="6.jpg" alt="작품 6"><div class="artwork-title">작품 6 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="7.jpg" alt="작품 7"><div class="artwork-title">작품 7 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="8.jpg" alt="작품 8"><div class="artwork-title">작품 8 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="9.jpg" alt="작품 9"><div class="artwork-title">작품 9 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="10.jpg" alt="작품 10"><div class="artwork-title">작품 10 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="11.jpg" alt="작품 11"><div class="artwork-title">작품 11 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="12.jpg" alt="작품 12"><div class="artwork-title">작품 12 (지본)</div></div>
+
+        <!-- 13~15번: 액자 -->
+        <div class="artwork-card item-akja"><img src="13.jpg" alt="작품 13"><div class="artwork-title">작품 13 (액자)</div></div>
+        <div class="artwork-card item-akja"><img src="14.jpg" alt="작품 14"><div class="artwork-title">작품 14 (액자)</div></div>
+        <div class="artwork-card item-akja"><img src="15.jpg" alt="작품 15"><div class="artwork-title">작품 15 (액자)</div></div>
+    </main>
+
+    <script>
+        function filterGallery(category) {
+            const buttons = document.querySelectorAll('.cat-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const jokjaItems = document.querySelectorAll('.item-jokja');
+            const jibonItems = document.querySelectorAll('.item-jibon');
+            const akjaItems = document.querySelectorAll('.item-akja');
+
+            // 전체 보기
+            if (category === 'all') {
+                jokjaItems.forEach(item => item.classList.remove('hidden'));
+                jibonItems.forEach(item => item.classList.remove('hidden'));
+                akjaItems.forEach(item => item.classList.remove('hidden'));
+            } 
+            // 족자 선택
+            else if (category === 'jokja') {
+                jokjaItems.forEach(item => item.classList.remove('hidden'));
+                jibonItems.forEach(item => item.classList.add('hidden'));
+                akjaItems.forEach(item => item.classList.add('hidden'));
+            } 
+            // 지본 선택
+            else if (category === 'jibon') {
+                jokjaItems.forEach(item => item.classList.add('hidden'));
+                jibonItems.forEach(item => item.classList.remove('hidden'));
+                akjaItems.forEach(item => item.classList.add('hidden'));
+            } 
+            // 액자 선택
+            else if (category === 'akja') {
+                jokjaItems.forEach(item => item.classList.add('hidden'));
+                jibonItems.forEach(item => item.classList.add('hidden'));
+                akjaItems.forEach(item => item.classList.remove('hidden'));
+            }
+        }
+    </script>
+</body>
+</html>
