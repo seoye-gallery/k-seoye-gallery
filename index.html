@@ -164,13 +164,6 @@
         .btn-primary:hover {
             background-color: #8b2626;
         }
-        .btn-secondary {
-            border: 1px solid #888;
-            color: #333;
-        }
-        .btn-secondary:hover {
-            background-color: #eee;
-        }
 
         /* 공통 섹션 스타일 */
         .section-container {
@@ -394,7 +387,6 @@
         </p>
         <div class="btn-group">
             <a href="#gallery" class="btn btn-primary">작품 감상하기</a>
-            <a href="#contact" class="btn btn-secondary">작가.문의하기</a>
         </div>
     </section>
 
@@ -509,4 +501,112 @@
                     <div class="item-meaning">작품 한글 풀이 및 설명</div>
                 </div>
             </div>
-            <div class="gallery-item ak
+            <div class="gallery-item akja" onclick="openModal('14.jpg', '작품 14 (액자)', '작품 14 한문 명칭 및 풀이')">
+                <img src="14.jpg" alt="작품 14">
+                <div class="item-info">
+                    <div class="item-title">작품 14 (액자)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item akja" onclick="openModal('15.jpg', '작품 15 (액자)', '작품 15 한문 명칭 및 풀이')">
+                <img src="15.jpg" alt="작품 15">
+                <div class="item-info">
+                    <div class="item-title">작품 15 (액자)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 작가 소개 섹션 -->
+    <section id="about" class="section-container">
+        <div class="section-header">
+            <h2>작가 소개</h2>
+            <p>원당(圓堂) 김제운 선생님의 삶과 서예 경력을 소개합니다.</p>
+        </div>
+
+        <div class="artist-card">
+            <div class="artist-quote">
+                "죽립제 한문 한시 서예 수학(7세)부터 이어온 묵향의 길, 평생을 다해 한 자 한 자 정성을 쏟아냅니다."
+            </div>
+            
+            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #222; border-bottom: 2px solid #b23b3b; display: inline-block; padding-bottom: 5px;">주요 약력</h3>
+            <ul class="career-list">
+                <li>죽립제 한문 한시 서예 수학 (7세)</li>
+                <li>국전 특선 연 4회, 추천작가·초대작가·심사위원 역임</li>
+                <li>국립 현대 미술 초대작가 6회 출품</li>
+                <li>국전 30년 작가전 출품</li>
+                <li>KBS TV1, 2, MBC 방영 출연 및 10대 서가 초대전에 출품 (KBS 주최)</li>
+                <li>국제 서예전 출품 (이사)</li>
+                <li>한국 서예 학원 협회장 (9년)</li>
+                <li>원장전 주최 미도파·대한민국 서예문화 총람 개최</li>
+                <li>서예 교육 공로상 수여 (문교부 장관·서울시장)</li>
+                <li>숭의대·성신여대 강사 및 대한불교 조계사·보문사 출강</li>
+                <li>서울 인석회장, 성석회 고문 / 사단법인 四一九 옥영사업회 지도위원</li>
+                <li>원당 서예회전 주최 (20회) 및 개인전 6회 개최</li>
+                <li>성균 서예학원장 (장설 41년) / 迦仙會 會長</li>
+                <li>대한민국 서가 협회 이사(운영위원·심사위원장) / 대한민국 서예원로회 부회장</li>
+                <li>한국서화 예술대전 심사위원장·자문위원장·고문</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. 작가.문의 연락처 안내 -->
+    <section id="contact" class="section-container" style="text-align: center; max-width: 600px;">
+        <div class="section-header">
+            <h2>작가.문의</h2>
+            <p>작품 소장 및 기타 문의는 아래 연락처로 문의해 주시기 바랍니다.</p>
+        </div>
+        <div class="artist-card" style="display: inline-block; text-align: left; width: 100%;">
+            <ul style="list-style: none; font-size: 1.05rem; line-height: 2.2;">
+                <li><strong style="color: #b23b3b; display: inline-block; width: 70px;">소장가</strong> 권영자</li>
+                <li><strong style="color: #b23b3b; display: inline-block; width: 70px;">연락처</strong> 010-5067-2626</li>
+                <li><strong style="color: #b23b3b; display: inline-block; width: 70px;">이메일</strong> myhanan@daum.net</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 모달(이미지 확대) 팝업 창 -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; K-서예 갤러리 (WONDANG CALLIGRAPHY GALLERY). All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterGallery(category, event) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(imgSrc, title, meaning) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalCaption = document.getElementById('modalCaption');
+
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+            modalCaption.innerHTML = '<strong>' + title + '</strong><br>' + meaning;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
