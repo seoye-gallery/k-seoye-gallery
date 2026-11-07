@@ -244,56 +244,61 @@
             font-weight: bold;
         }
 
-        /* 문의하기 섹션 */
+        /* 문의하기 섹션 (컴팩트하게 정돈) */
         .contact-card {
+            max-width: 820px;
+            margin: 0 auto;
             background-color: #fff;
-            padding: 40px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 30px;
+            align-items: center;
         }
         .contact-info-list {
             list-style: none;
-            margin-top: 20px;
         }
         .contact-info-list li {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #444;
         }
         .contact-label {
             font-weight: bold;
             color: #b23b3b;
             display: inline-block;
-            width: 80px;
+            width: 60px;
         }
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             font-weight: bold;
+            font-size: 0.9rem;
         }
         .form-group input, .form-group textarea {
             width: 100%;
-            padding: 12px;
+            padding: 9px 12px;
             border: 1px solid #ccc;
             border-radius: 6px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-family: inherit;
         }
         .btn-submit {
             width: 100%;
             background-color: #b23b3b;
             color: #fff;
-            padding: 14px;
+            padding: 10px;
             border: none;
             border-radius: 6px;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-top: 4px;
         }
         .btn-submit:hover {
             background-color: #8b2626;
@@ -378,13 +383,13 @@
             <div class="gallery-item jokja"><img src="1.jpg" alt="작품 1"><div class="item-info">작품 1 (족자)</div></div>
             <div class="gallery-item jokja"><img src="2.jpg" alt="작품 2"><div class="item-info">작품 2 (족자)</div></div>
             <div class="gallery-item jokja"><img src="3.jpg" alt="작품 3"><div class="item-info">작품 3 (족자)</div></div>
-            <div class="gallery-item jokja"><img src="4.jpg" alt="작품 4"><div class="item-info">작품 4 (족자)</div></div>
-            <div class="gallery-item jokja"><img src="5.jpg" alt="작품 5"><div class="item-info">작품 5 (족자)</div></div>
-            <div class="gallery-item jokja"><img src="6.jpg" alt="작품 6"><div class="item-info">작품 6 (족자)</div></div>
-            <div class="gallery-item jokja"><img src="7.jpg" alt="작품 7"><div class="item-info">작품 7 (족자)</div></div>
-            <div class="gallery-item jokja"><img src="8.jpg" alt="작품 8"><div class="item-info">작품 8 (족자)</div></div>
-            <div class="gallery-item jokja"><img src="9.jpg" alt="작품 9"><div class="item-info">작품 9 (족자)</div></div>
-            <div class="gallery-item jokja"><img src="10.jpg" alt="작품 10"><div class="item-info">작품 10 (족자)</div></div>
+            <div class="gallery-item jibon"><img src="4.jpg" alt="작품 4"><div class="item-info">작품 4 (지본)</div></div>
+            <div class="gallery-item jibon"><img src="5.jpg" alt="작품 5"><div class="item-info">작품 5 (지본)</div></div>
+            <div class="gallery-item jibon"><img src="6.jpg" alt="작품 6"><div class="item-info">작품 6 (지본)</div></div>
+            <div class="gallery-item jibon"><img src="7.jpg" alt="작품 7"><div class="item-info">작품 7 (지본)</div></div>
+            <div class="gallery-item jibon"><img src="8.jpg" alt="작품 8"><div class="item-info">작품 8 (지본)</div></div>
+            <div class="gallery-item jibon"><img src="9.jpg" alt="작품 9"><div class="item-info">작품 9 (지본)</div></div>
+            <div class="gallery-item jibon"><img src="10.jpg" alt="작품 10"><div class="item-info">작품 10 (지본)</div></div>
             <div class="gallery-item jibon"><img src="11.jpg" alt="작품 11"><div class="item-info">작품 11 (지본)</div></div>
             <div class="gallery-item jibon"><img src="12.jpg" alt="작품 12"><div class="item-info">작품 12 (지본)</div></div>
             <div class="gallery-item akja"><img src="13.jpg" alt="작품 13"><div class="item-info">작품 13 (액자)</div></div>
@@ -426,25 +431,23 @@
         </div>
     </section>
 
-    <!-- 4. 작품 문의 섹션 -->
+    <!-- 4. 작품 문의 섹션 (소장가 정보와 폼 나란히 배치) -->
     <section id="contact" class="section-container">
         <div class="section-header">
             <h2>작품 문의</h2>
-            <p>서예 작품 소장 및 기타 문의 사항을 소장가에게 남겨주세요.</p>
+            <p>서예 작품 소장 및 기타 문의 사항을 남겨주세요.</p>
         </div>
 
         <div class="contact-card">
             <div>
-                <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #222;">소장가 안내</h3>
-                <p style="color: #666; margin-bottom: 20px;">
-                    원당 김제운 작가님의 소중한 작품 소장 및 전시 관련 문의는 아래 양식을 통해 편하게 남겨주시기 바랍니다.
-                </p>
                 <ul class="contact-info-list">
                     <li><span class="contact-label">소장가</span> 권영자</li>
+                    <li><span class="contact-label">연락처</span> 010-5067-2626</li>
+                    <li><span class="contact-label">이메일</span> myhanan@daum.net</li>
                 </ul>
             </div>
 
-            <form onsubmit="alert('문의가 제출되었습니다. 확인 후 조속히 연락드리겠습니다.'); return false;">
+            <form onsubmit="alert('문의가 제출되었습니다.'); return false;">
                 <div class="form-group">
                     <label>성함</label>
                     <input type="text" placeholder="성함을 입력하세요" required>
@@ -454,10 +457,10 @@
                     <input type="tel" placeholder="010-0000-0000" required>
                 </div>
                 <div class="form-group">
-                    <label>문의 내용 (관심 작품명 등)</label>
-                    <textarea rows="4" placeholder="관심 있으신 작품 명칭이나 문의 사항을 적어주세요." required></textarea>
+                    <label>문의 내용</label>
+                    <textarea rows="3" placeholder="관심 작품 및 문의 사항" required></textarea>
                 </div>
-                <button type="submit" class="btn-submit">소장가 권영자 님께 문의 보내기</button>
+                <button type="submit" class="btn-submit">문의 보내기</button>
             </form>
         </div>
     </section>
