@@ -3,142 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국 서예 갤러리 - K-Seoye Gallery</title>
+    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
+            background-color: #fcfbfa;
             color: #222;
-            padding: 0;
+            line-height: 1.8;
         }
         /* 상단 네비게이션 바 */
         header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(252, 251, 250, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 40px;
+            padding: 20px 40px;
             max-width: 1200px;
             margin: 0 auto;
+            border-bottom: 1px solid #e5e0d8;
         }
         .logo-area {
             display: flex;
             align-items: center;
             gap: 12px;
+            cursor: pointer;
         }
         .badge {
             background-color: #b23b3b;
             color: #fff;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+        }
+        .site-title-box {
+            display: flex;
+            flex-direction: column;
         }
         .site-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 1px;
             color: #222;
         }
+        .site-subtitle {
+            font-size: 0.75rem;
+            color: #888;
+            letter-spacing: 2px;
+        }
         .nav-menu {
             display: flex;
-            gap: 30px;
-            font-size: 1.05rem;
+            gap: 25px;
+            font-size: 1rem;
             color: #444;
         }
-        .nav-menu span {
-            cursor: pointer;
+        .nav-menu a {
+            text-decoration: none;
+            color: #444;
             transition: color 0.2s;
         }
-        .nav-menu span:hover {
+        .nav-menu a:hover {
             color: #b23b3b;
+            font-weight: bold;
         }
 
-        /* 메인 대문 콘텐츠 영역 */
+        /* 메인 비주얼 히어로 섹션 */
         .hero-section {
-            max-width: 900px;
-            margin: 80px auto 60px auto;
-            padding: 0 20px;
-            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eae5dd;
         }
-        .sub-tag {
-            font-size: 0.95rem;
-            color: #777;
-            letter-spacing: 2px;
+        .hero-hanja {
+            color: #8b2626;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
             margin-bottom: 15px;
         }
-        h1 {
-            font-size: 3rem;
-            line-height: 1.3;
-            color: #111;
-            margin-bottom: 30px;
-            font-weight: normal;
-        }
-        h1 strong {
+        .hero-title {
+            font-size: 2.8rem;
             font-weight: bold;
-            color: #b23b3b;
+            line-height: 1.4;
+            color: #111;
+            margin-bottom: 25px;
         }
-        .intro-text {
+        .hero-desc {
             font-size: 1.15rem;
-            line-height: 1.8;
             color: #555;
-            margin-bottom: 50px;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            word-break: keep-all;
         }
-
-        /* 버튼 그룹 */
         .btn-group {
             display: flex;
-            gap: 20px;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
         .btn-primary {
             background-color: #b23b3b;
             color: #fff;
-            padding: 16px 45px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-            display: inline-block;
         }
         .btn-primary:hover {
-            background-color: #932e2e;
+            background-color: #8b2626;
         }
         .btn-secondary {
-            background-color: transparent;
-            color: #333;
             border: 1px solid #888;
-            padding: 16px 45px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.2s;
-            display: inline-block;
+            color: #333;
         }
         .btn-secondary:hover {
-            background-color: #eae6df;
+            background-color: #eee;
         }
 
-        /* 반응형 디자인 */
+        /* 공통 섹션 스타일 */
+        .section-container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #111;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        .section-header p {
+            color: #777;
+        }
+
+        /* 갤러리 섹션 */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #222;
+            color: #fff;
+            border-color: #222;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .gallery-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        .item-info {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* 작가 소개 섹션 */
+        .artist-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .artist-quote {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #444;
+            background-color: #fcfbfa;
+            padding: 20px;
+            border-left: 4px solid #b23b3b;
+            margin-bottom: 30px;
+        }
+        .career-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 10px 20px;
+        }
+        .career-list li {
+            font-size: 1rem;
+            color: #444;
+            position: relative;
+            padding-left: 15px;
+        }
+        .career-list li::before {
+            content: "•";
+            color: #b23b3b;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* 문의하기 섹션 */
+        .contact-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .contact-info-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .contact-info-list li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .contact-label {
+            font-weight: bold;
+            color: #b23b3b;
+            display: inline-block;
+            width: 100px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: #b23b3b;
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #8b2626;
+        }
+
+        /* 푸터 */
+        footer {
+            background-color: #222;
+            color: #888;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+            margin-top: 80px;
+        }
+
         @media (max-width: 768px) {
             header {
-                padding: 20px;
                 flex-direction: column;
                 gap: 15px;
+                padding: 15px 20px;
             }
-            .hero-section {
-                margin-top: 40px;
-                text-align: center;
+            .hero-title {
+                font-size: 2rem;
             }
-            h1 {
-                font-size: 2.2rem;
+            .contact-card {
+                grid-template-columns: 1fr;
             }
-            .btn-group {
-                justify-content: center;
-                flex-direction: column;
+            .career-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -147,31 +329,159 @@
 
     <!-- 상단 헤더 -->
     <header>
-        <div class="logo-area">
-            <div class="badge">福</div>
-            <span class="site-title">한국 서예 갤러리</span>
+        <div class="logo-area" onclick="location.href='#'">
+            <div class="badge">元</div>
+            <div class="site-title-box">
+                <span class="site-title">원당 서예 갤러리</span>
+                <span class="site-subtitle">WONDANG CALLIGRAPHY</span>
+            </div>
         </div>
-        <div class="nav-menu">
-            <span onclick="location.href='gallery.html'">작품</span>
-            <span onclick="alert('준비 중인 페이지입니다.')">서예 이야기</span>
-            <span onclick="alert('준비 중인 페이지입니다.')">작가·문의</span>
-        </div>
+        <nav class="nav-menu">
+            <a href="#home">대문</a>
+            <a href="#gallery">작품 보기</a>
+            <a href="#about">작가 소개</a>
+            <a href="#contact">작품 문의</a>
+        </nav>
     </header>
 
-    <!-- 메인 대문 내용 -->
-    <main class="hero-section">
-        <div class="sub-tag">韓國 · 書藝 · K-SEOYE</div>
-        <h1>한 폭의 그림에<br><strong>묵향과 평안을 담습니다</strong></h1>
-        <p class="intro-text">
-            붓끝으로 피워낸 정성스러운 서예 작품들을 만나보세요.<br>
-            족자, 지본, 액자 등 다양한 형태의 작품에 담긴 깊이와 여유를 전합니다.
+    <!-- 1. 메인 첫 화면 (히어로 섹션) -->
+    <section id="home" class="hero-section">
+        <div class="hero-hanja">韓國 書藝 · 元堂 金濟雲 藝苑</div>
+        <h1 class="hero-title">붓끝으로 피워낸 墨香,<br>삶의 깊이와 평안을 담다</h1>
+        <p class="hero-desc">
+            한 자 한 자에 담긴 붓의 기운과 지극한 정성.<br>
+            원당 김제운 작가의 대작과 소장가 권영자의 소중한 컬렉션을 온전히 전합니다.
         </p>
-        
         <div class="btn-group">
-            <a href="gallery.html" class="btn-primary">작품 보기</a>
-            <a href="#" class="btn-secondary" onclick="alert('준비 중인 페이지입니다.'); return false;">서예 이야기</a>
+            <a href="#gallery" class="btn btn-primary">작품 감상하기</a>
+            <a href="#contact" class="btn btn-secondary">작품 문의하기</a>
         </div>
-    </main>
+    </section>
 
+    <!-- 2. 작품 갤러리 섹션 (1~15번 사진) -->
+    <section id="gallery" class="section-container">
+        <div class="section-header">
+            <h2>서예 작품 갤러리</h2>
+            <p>정성스럽게 담아낸 족자, 지본, 액자 작품을 분류별로 감상해 보세요.</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGallery('all', event)">전체 보기</button>
+            <button class="filter-btn" onclick="filterGallery('jokja', event)">족자 작품</button>
+            <button class="filter-btn" onclick="filterGallery('jibon', event)">지본 작품</button>
+            <button class="filter-btn" onclick="filterGallery('akja', event)">액자 작품</button>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item jokja"><img src="1.jpg" alt="작품 1"><div class="item-info">작품 1 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="2.jpg" alt="작품 2"><div class="item-info">작품 2 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="3.jpg" alt="작품 3"><div class="item-info">작품 3 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="4.jpg" alt="작품 4"><div class="item-info">작품 4 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="5.jpg" alt="작품 5"><div class="item-info">작품 5 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="6.jpg" alt="작품 6"><div class="item-info">작품 6 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="7.jpg" alt="작품 7"><div class="item-info">작품 7 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="8.jpg" alt="작품 8"><div class="item-info">작품 8 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="9.jpg" alt="작품 9"><div class="item-info">작품 9 (족자)</div></div>
+            <div class="gallery-item jokja"><img src="10.jpg" alt="작품 10"><div class="item-info">작품 10 (족자)</div></div>
+            <div class="gallery-item jibon"><img src="11.jpg" alt="작품 11"><div class="item-info">작품 11 (지본)</div></div>
+            <div class="gallery-item jibon"><img src="12.jpg" alt="작품 12"><div class="item-info">작품 12 (지본)</div></div>
+            <div class="gallery-item akja"><img src="13.jpg" alt="작품 13"><div class="item-info">작품 13 (액자)</div></div>
+            <div class="gallery-item akja"><img src="14.jpg" alt="작품 14"><div class="item-info">작품 14 (액자)</div></div>
+            <div class="gallery-item akja"><img src="15.jpg" alt="작품 15"><div class="item-info">작품 15 (액자)</div></div>
+        </div>
+    </section>
+
+    <!-- 3. 작가 소개 섹션 (김제운 작가님 약력) -->
+    <section id="about" class="section-container">
+        <div class="section-header">
+            <h2>작가 소개</h2>
+            <p>원당(圓堂) 김제운 선생님의 삶과 서예 경력을 소개합니다.</p>
+        </div>
+
+        <div class="artist-card">
+            <div class="artist-quote">
+                "죽립제 한문 한시 서예 수학(7세)부터 이어온 묵향의 길, 평생을 다해 한 자 한 자 정성을 쏟아냅니다."
+            </div>
+            
+            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #222; border-bottom: 2px solid #b23b3b; display: inline-block; padding-bottom: 5px;">주요 약력</h3>
+            <ul class="career-list">
+                <li>죽립제 한문 한시 서예 수학 (7세)</li>
+                <li>국전 특선 연 4회, 추천작가·초대작가·심사위원 역임</li>
+                <li>국립 현대 미술 초대작가 6회 출품</li>
+                <li>국전 30년 작가전 출품</li>
+                <li>KBS TV1, 2, MBC 방영 출연 및 10대 서가 초대전에 출품 (KBS 주최)</li>
+                <li>국제 서예전 출품 (이사)</li>
+                <li>한국 서예 학원 협회장 (9년)</li>
+                <li>원장전 주최 미도파·대한민국 서예문화 총람 개최</li>
+                <li>서예 교육 공로상 수여 (문교부 장관·서울시장)</li>
+                <li>숭의대·성신여대 강사 및 대한불교 조계사·보문사 출강</li>
+                <li>서울 인석회장, 성석회 고문 / 사단법인 四一九 옥영사업회 지도위원</li>
+                <li>원당 서예회전 주최 (20회) 및 개인전 6회 개최</li>
+                <li>성균 서예학원장 (장설 41년) / 迦仙會 會長</li>
+                <li>대한민국 서가 협회 이사(운영위원·심사위원장) / 대한민국 서예원로회 부회장</li>
+                <li>한국서화 예술대전 심사위원장·자문위원장·고문</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. 작품 문의 섹션 (소장가 권영자 님 문의 양식) -->
+    <section id="contact" class="section-container">
+        <div class="section-header">
+            <h2>작품 문의 & 연락처</h2>
+            <p>서예 작품 소장, 맞춤 서예 제작 및 기타 문의 사항을 남겨주세요.</p>
+        </div>
+
+        <div class="contact-card">
+            <div>
+                <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #222;">서예실 및 소장가 안내</h3>
+                <p style="color: #666; margin-bottom: 20px;">
+                    원당 김제운 작가님의 작품 감상 및 소장 문의는 아래 연락처 또는 문의 양식을 통해 하실 수 있습니다.
+                </p>
+                <ul class="contact-info-list">
+                    <li><span class="contact-label">서예실 위치</span> 서울시 종로구 종로5가 182-6 원당서예학원 (종로5가역 6번 출구)</li>
+                    <li><span class="contact-label">서예실 전화</span> 02-2265-1508, 02-2267-5529</li>
+                    <li><span class="contact-label">소장가</span> 권영자</li>
+                </ul>
+            </div>
+
+            <form onsubmit="alert('문의가 제출되었습니다. 확인 후 조속히 연락드리겠습니다.'); return false;">
+                <div class="form-group">
+                    <label>성함</label>
+                    <input type="text" placeholder="성함을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label>연락처</label>
+                    <input type="tel" placeholder="010-0000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label>문의 내용 (관심 작품명 등)</label>
+                    <textarea rows="4" placeholder="관심 있으신 작품 명칭이나 문의 사항을 적어주세요." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">소장가 권영자 님께 문의 보내기</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 원당 서예 갤러리 (WONDANG CALLIGRAPHY GALLERY). All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterGallery(category, event) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
