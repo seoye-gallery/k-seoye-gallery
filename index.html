@@ -1,460 +1,702 @@
-2026년 11월 7일 토요일
-[권영자] [오전 11:42] 컴퓨터 화면에 있는 카톡에 있는 금방 올라온 것을 그 자리에서 복사해서 붙여도 되지?
-[권영자] [오전 11:48] <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Seoye Gallery</title>
-    <style>
-        body { font-family: 'Noto Serif KR', serif; margin: 0; padding: 20px; background-color: #f9f9f9; }
-        h1 { color: #333; margin-top: 30px; }
-        p { color: #666; }
-        .gallery-container { max-width: 900px; margin: 30px auto; padding: 10px; }
-        .gallery-card { background: white; margi...
-[권영자] [오후 12:52] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Seoye Gallery</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+    <title>K-서예 갤러리</title>
+
+    <!-- 카카오톡, 문자 공유 시 미리보기 카드 설정 -->
+    <meta property="og:title" content="K-서예 갤러리 | 원당 김제운 작가 · 소장가 권영자">
+    <meta property="og:description" content="붓끝으로 피워낸 묵향, 삶의 깊이와 평안을 담다. 원당 김제운 작가의 서예 작품과 소장품을 감상해 보세요.">
+    <meta property="og:image" content="1.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- 구글 번역 스크립트 연동 -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ko',
+                includedLanguages: 'ko,en,zh-CN,ja',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
-            color: #222;
-            text-align: center;
-            padding: 20px;
-       ...
-[권영자] [오후 1:00] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Seoye Gallery</title>
+    </script>
+
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
-            color: #222;
-            text-align: center;
-            padding: 20px;
-       ...
-[권영자] [오후 1:10] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Seoye Gallery</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        html {
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
+            background-color: #fcfbfa;
             color: #222;
-            text-align: center;
-            padding: 20px;
-       ...
-[권영자] [오후 1:29] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Seoye Gallery</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            line-height: 1.8;
+            top: 0 !important;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
-            color: #222;
-            text-align: center;
-            padding: 20px;
-       ...
-[권영자] [오후 1:43] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수복재 - 韓國 民畵</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .goog-te-banner-frame {
+            display: none !important;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
-            color: #222;
-            padding: 0;
+        .goog-te-gadget-simple {
+            background-color: #fff !important;
+            border: 1px solid #ddd !important;
+            padding: 4px 10px !important;
+            border-radius: 4px !important;
+            font-size: 0.85rem !important;
+            cursor: pointer;
         }
+
         /* 상단 네비게이션 바 */
-        hea...
-[권영자] [오후 1:47] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국 서예 갤러리 - K-Seoye Gallery</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(252, 251, 250, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #e5e0d8;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .badge {
+            background-color: #b23b3b;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .site-title-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .site-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
             color: #222;
-            padding: 0;
         }
-        /* 상단 네비게이션 ...
-[권영자] [오후 2:03] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국 서예 갤러리 - K-Seoye Gallery</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .site-subtitle {
+            font-size: 0.75rem;
+            color: #888;
+            letter-spacing: 2px;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #f7f5f0;
-            color: #222;
-            padding: 0;
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
-        /* 상단 네비게이션 ...
-[권영자] [오후 6:45] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            font-size: 1rem;
+            color: #444;
         }
-        html {
-            scroll-behavior: smooth;
+        .nav-menu a {
+            text-decoration: none;
+            color: #444;
+            transition: color 0.2s;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
+        .nav-menu a:hover {
+            color: #b23b3b;
+            font-weight: bold;
+        }
+
+        /* 메인 비주얼 히어로 섹션 */
+        .hero-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eae5dd;
+        }
+        .hero-hanja {
+            color: #8b2626;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #111;
+            margin-bottom: 25px;
+        }
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            word-break: keep-all;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background-color: #b23b3b;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #8b2626;
+        }
+        .btn-secondary {
+            border: 1px solid #888;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background-color: #eee;
+        }
+
+        /* 공통 섹션 스타일 */
+        .section-container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #111;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        .section-header p {
+            color: #777;
+        }
+
+        /* 갤러리 섹션 */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #222;
+            color: #fff;
+            border-color: #222;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 35px;
+        }
+        .gallery-item {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 480px;
+            object-fit: contain;
+            background-color: #f3f0ea;
+            display: block;
+        }
+        .item-info {
+            padding: 16px;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+            background-color: #fff;
+        }
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 4px;
+        }
+        .item-meaning {
+            font-size: 0.88rem;
+            color: #666;
+            word-break: keep-all;
+        }
+
+        /* 작가 소개 섹션 */
+        .artist-card {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .artist-quote {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: #444;
             background-color: #fcfbfa;
-            c...
-[권영자] [오후 6:54] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            padding: 20px;
+            border-left: 4px solid #b23b3b;
+            margin-bottom: 30px;
         }
-        html {
-            scroll-behavior: smooth;
+        .career-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 10px 20px;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:11] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .career-list li {
+            font-size: 1rem;
+            color: #444;
+            position: relative;
+            padding-left: 15px;
         }
-        html {
-            scroll-behavior: smooth;
+        .career-list li::before {
+            content: "•";
+            color: #b23b3b;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:20] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+
+        /* 작가점 문의 섹션 */
+        .contact-card {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 20px;
+            align-items: center;
         }
-        html {
-            scroll-behavior: smooth;
+        .contact-info-list {
+            list-style: none;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:23] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .contact-info-list li {
+            margin-bottom: 8px;
+            font-size: 0.88rem;
+            color: #444;
         }
-        html {
-            scroll-behavior: smooth;
+        .contact-label {
+            font-weight: bold;
+            color: #b23b3b;
+            display: inline-block;
+            width: 50px;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:25] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .form-group {
+            margin-bottom: 8px;
         }
-        html {
-            scroll-behavior: smooth;
+        .form-group label {
+            display: block;
+            margin-bottom: 2px;
+            font-weight: bold;
+            font-size: 0.8rem;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:34] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            font-family: inherit;
         }
-        html {
-            scroll-behavior: smooth;
+        .btn-submit {
+            width: 100%;
+            background-color: #b23b3b;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 2px;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:38] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .btn-submit:hover {
+            background-color: #8b2626;
         }
-        html {
-            scroll-behavior: smooth;
+
+        /* 모달(이미지 확대) 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:43] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리 - WONDANG CALLIGRAPHY</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .modal-content {
+            max-width: 90%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
-        html {
-            scroll-behavior: smooth;
+        .modal-caption {
+            color: #fff;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            text-align: center;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            c...
-[권영자] [오후 7:44] 깃허브에서 이름이 서예 갤러리 / 케이 서예 갤러리 그렇게 나오는데 그냥 K서예 갤러리만 나오면 안 돼?
-[권영자] [오후 7:45] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-서예 갤러리</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
         }
-        html {
-            scroll-behavior: smooth;
+        .modal-close:hover {
+            color: #b23b3b;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            color: #222;
-           ...
-[권영자] [오후 7:50] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-서예 갤러리</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+
+        /* 푸터 */
+        footer {
+            background-color: #222;
+            color: #888;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+            margin-top: 80px;
         }
-        html {
-            scroll-behavior: smooth;
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+            .nav-right {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .contact-card {
+                grid-template-columns: 1fr;
+            }
+            .career-list {
+                grid-template-columns: 1fr;
+            }
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            color: #222;
-           ...
-[권영자] [오후 7:59] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-서예 갤러리</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+    </style>
+</head>
+<body>
+
+    <!-- 상단 헤더 -->
+    <header>
+        <div class="logo-area" onclick="location.href='#'">
+            <div class="badge">元</div>
+            <div class="site-title-box">
+                <span class="site-title">K-서예 갤러리</span>
+                <span class="site-subtitle">WONDANG CALLIGRAPHY</span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <nav class="nav-menu">
+                <a href="#gallery">작품 보기</a>
+                <a href="#about">작가 소개</a>
+                <a href="#contact">작가점 문의</a>
+            </nav>
+            <div id="google_translate_element"></div>
+        </div>
+    </header>
+
+    <!-- 1. 메인 첫 화면 (히어로 섹션) -->
+    <section id="home" class="hero-section">
+        <div class="hero-hanja">韓國 書藝 · 元堂 金濟雲 藝苑</div>
+        <h1 class="hero-title">붓끝으로 피워낸 墨香,<br>삶의 깊이와 평안을 담다</h1>
+        <p class="hero-desc">
+            한 자 한 자에 담긴 붓의 기운과 지극한 정성.<br>
+            원당 김제운 작가의 대작과 소장가 권영자의 소중한 컬렉션을 온전히 전합니다.
+        </p>
+        <div class="btn-group">
+            <a href="#gallery" class="btn btn-primary">작품 감상하기</a>
+            <a href="#contact" class="btn btn-secondary">작가점 문의하기</a>
+        </div>
+    </section>
+
+    <!-- 2. 작품 갤러리 섹션 -->
+    <section id="gallery" class="section-container">
+        <div class="section-header">
+            <h2>서예 작품 갤러리</h2>
+            <p>작품을 클릭하시면 크게 확대하여 감상하실 수 있습니다.</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGallery('all', event)">전체 보기</button>
+            <button class="filter-btn" onclick="filterGallery('jokja', event)">족자 작품</button>
+            <button class="filter-btn" onclick="filterGallery('jibon', event)">지본 작품</button>
+            <button class="filter-btn" onclick="filterGallery('akja', event)">액자 작품</button>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- 족자 작품 (1~3) -->
+            <div class="gallery-item jokja" onclick="openModal('1.jpg', '작품 1 (족자)', '壽山福海 (수산복해) - 산처럼 높은 수명과 바다처럼 넓은 복')">
+                <img src="1.jpg" alt="작품 1">
+                <div class="item-info">
+                    <div class="item-title">작품 1 (족자) · 壽山福海</div>
+                    <div class="item-meaning">산처럼 높은 수명과 바다처럼 넓은 복</div>
+                </div>
+            </div>
+            <div class="gallery-item jokja" onclick="openModal('2.jpg', '작품 2 (족자)', '信望愛 (신망애) - 믿음과 소망과 사랑')">
+                <img src="2.jpg" alt="작품 2">
+                <div class="item-info">
+                    <div class="item-title">작품 2 (족자) · 信望愛</div>
+                    <div class="item-meaning">믿음, 소망, 그리고 사랑</div>
+                </div>
+            </div>
+            <div class="gallery-item jokja" onclick="openModal('3.jpg', '작품 3 (족자)', '작품 3 한문 명칭 및 풀이')">
+                <img src="3.jpg" alt="작품 3">
+                <div class="item-info">
+                    <div class="item-title">작품 3 (족자)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+
+            <!-- 지본 작품 (4~12) -->
+            <div class="gallery-item jibon" onclick="openModal('4.jpg', '작품 4 (지본)', '작품 4 한문 명칭 및 풀이')">
+                <img src="4.jpg" alt="작품 4">
+                <div class="item-info">
+                    <div class="item-title">작품 4 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('5.jpg', '작품 5 (지본)', '작품 5 한문 명칭 및 풀이')">
+                <img src="5.jpg" alt="작품 5">
+                <div class="item-info">
+                    <div class="item-title">작품 5 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('6.jpg', '작품 6 (지본)', '작품 6 한문 명칭 및 풀이')">
+                <img src="6.jpg" alt="작품 6">
+                <div class="item-info">
+                    <div class="item-title">작품 6 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('7.jpg', '작품 7 (지본)', '작품 7 한문 명칭 및 풀이')">
+                <img src="7.jpg" alt="작품 7">
+                <div class="item-info">
+                    <div class="item-title">작품 7 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('8.jpg', '작품 8 (지본)', '작품 8 한문 명칭 및 풀이')">
+                <img src="8.jpg" alt="작품 8">
+                <div class="item-info">
+                    <div class="item-title">작품 8 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('9.jpg', '작품 9 (지본)', '작품 9 한문 명칭 및 풀이')">
+                <img src="9.jpg" alt="작품 9">
+                <div class="item-info">
+                    <div class="item-title">작품 9 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('10.jpg', '작품 10 (지본)', '작품 10 한문 명칭 및 풀이')">
+                <img src="10.jpg" alt="작품 10">
+                <div class="item-info">
+                    <div class="item-title">작품 10 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('11.jpg', '작품 11 (지본)', '작품 11 한문 명칭 및 풀이')">
+                <img src="11.jpg" alt="작품 11">
+                <div class="item-info">
+                    <div class="item-title">작품 11 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item jibon" onclick="openModal('12.jpg', '작품 12 (지본)', '작품 12 한문 명칭 및 풀이')">
+                <img src="12.jpg" alt="작품 12">
+                <div class="item-info">
+                    <div class="item-title">작품 12 (지본)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+
+            <!-- 액자 작품 (13~15) -->
+            <div class="gallery-item akja" onclick="openModal('13.jpg', '작품 13 (액자)', '작품 13 한문 명칭 및 풀이')">
+                <img src="13.jpg" alt="작품 13">
+                <div class="item-info">
+                    <div class="item-title">작품 13 (액자)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item akja" onclick="openModal('14.jpg', '작품 14 (액자)', '작품 14 한문 명칭 및 풀이')">
+                <img src="14.jpg" alt="작품 14">
+                <div class="item-info">
+                    <div class="item-title">작품 14 (액자)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+            <div class="gallery-item akja" onclick="openModal('15.jpg', '작품 15 (액자)', '작품 15 한문 명칭 및 풀이')">
+                <img src="15.jpg" alt="작품 15">
+                <div class="item-info">
+                    <div class="item-title">작품 15 (액자)</div>
+                    <div class="item-meaning">작품 한글 풀이 및 설명</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 작가 소개 섹션 -->
+    <section id="about" class="section-container">
+        <div class="section-header">
+            <h2>작가 소개</h2>
+            <p>원당(圓堂) 김제운 선생님의 삶과 서예 경력을 소개합니다.</p>
+        </div>
+
+        <div class="artist-card">
+            <div class="artist-quote">
+                "죽립제 한문 한시 서예 수학(7세)부터 이어온 묵향의 길, 평생을 다해 한 자 한 자 정성을 쏟아냅니다."
+            </div>
+            
+            <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #222; border-bottom: 2px solid #b23b3b; display: inline-block; padding-bottom: 5px;">주요 약력</h3>
+            <ul class="career-list">
+                <li>죽립제 한문 한시 서예 수학 (7세)</li>
+                <li>국전 특선 연 4회, 추천작가·초대작가·심사위원 역임</li>
+                <li>국립 현대 미술 초대작가 6회 출품</li>
+                <li>국전 30년 작가전 출품</li>
+                <li>KBS TV1, 2, MBC 방영 출연 및 10대 서가 초대전에 출품 (KBS 주최)</li>
+                <li>국제 서예전 출품 (이사)</li>
+                <li>한국 서예 학원 협회장 (9년)</li>
+                <li>원장전 주최 미도파·대한민국 서예문화 총람 개최</li>
+                <li>서예 교육 공로상 수여 (문교부 장관·서울시장)</li>
+                <li>숭의대·성신여대 강사 및 대한불교 조계사·보문사 출강</li>
+                <li>서울 인석회장, 성석회 고문 / 사단법인 四一九 옥영사업회 지도위원</li>
+                <li>원당 서예회전 주최 (20회) 및 개인전 6회 개최</li>
+                <li>성균 서예학원장 (장설 41년) / 迦仙會 會長</li>
+                <li>대한민국 서가 협회 이사(운영위원·심사위원장) / 대한민국 서예원로회 부회장</li>
+                <li>한국서화 예술대전 심사위원장·자문위원장·고문</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. 작가점 문의 섹션 -->
+    <section id="contact" class="section-container">
+        <div class="section-header">
+            <h2>작가점 문의</h2>
+            <p>서예 작품 소장 및 기타 문의 사항을 남겨주세요.</p>
+        </div>
+
+        <div class="contact-card">
+            <div>
+                <ul class="contact-info-list">
+                    <li><span class="contact-label">소장가</span> 권영자</li>
+                    <li><span class="contact-label">연락처</span> 010-5067-2626</li>
+                    <li><span class="contact-label">이메일</span> myhanan@daum.net</li>
+                </ul>
+            </div>
+
+            <form onsubmit="alert('문의가 제출되었습니다.'); return false;">
+                <div class="form-group">
+                    <label>성함</label>
+                    <input type="text" placeholder="성함 입력" required>
+                </div>
+                <div class="form-group">
+                    <label>연락처</label>
+                    <input type="tel" placeholder="010-0000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label>문의 내용</label>
+                    <textarea rows="2" placeholder="관심 작품 및 문의 사항" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">문의 보내기</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 모달(이미지 확대) 팝업 창 -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; K-서예 갤러리 (WONDANG CALLIGRAPHY GALLERY). All rights reserved.</p>
+    </footer>
+
+    <script>
+        function filterGallery(category, event) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         }
-        html {
-            scroll-behavior: smooth;
+
+        function openModal(imgSrc, title, meaning) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalCaption = document.getElementById('modalCaption');
+
+            modal.style.display = 'flex';
+            modalImg.src = imgSrc;
+            modalCaption.innerHTML = '<strong>' + title + '</strong><br>' + meaning;
         }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            color: #222;
-           ...
-[권영자] [오후 8:31] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-서예 갤러리</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
         }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            color: #222;
-           
-[권영자] [오후 8:32] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-서예 갤러리</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            color: #222;
-           
-[권영자] [오후 8:38] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-서예 갤러리</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            color: #222;
-           
-[권영자] [오후 8:42] <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-서예 갤러리</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fcfbfa;
-            color: #222;
-           
+    </script>
+</body>
+</html>
