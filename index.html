@@ -39,8 +39,8 @@
         .cat-btn {
             background-color: #fff;
             border: 1px solid #aaa;
-            padding: 10px 22px;
-            margin: 0 5px;
+            padding: 10px 20px;
+            margin: 5px;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 20px;
@@ -95,31 +95,34 @@
         <h1>K-Seoye Gallery</h1>
         <p class="subtitle">붓끝으로 피워낸 墨香, 삶의 깊이와 평안을 담다</p>
         
-        <!-- 카테고리 선택 버튼 -->
+        <!-- 카테고리 선택 버튼 (전체, 족자, 지본, 액자) -->
         <div class="category-container">
             <button class="cat-btn active" onclick="filterGallery('all')">전체 보기</button>
             <button class="cat-btn" onclick="filterGallery('jokja')">족자 작품</button>
+            <button class="cat-btn" onclick="filterGallery('jibon')">지본 작품</button>
             <button class="cat-btn" onclick="filterGallery('akja')">액자 작품</button>
         </div>
     </header>
 
-    <!-- 작품 목록 -->
+    <!-- 작품 목록 (1~15) -->
     <main class="gallery-container">
-        <!-- 1~10번: 족자 예시 (필요시 데이터 유형 수정 가능) -->
+        <!-- 1~3번: 족자 -->
         <div class="artwork-card item-jokja"><img src="1.jpg" alt="작품 1"><div class="artwork-title">작품 1 (족자)</div></div>
         <div class="artwork-card item-jokja"><img src="2.jpg" alt="작품 2"><div class="artwork-title">작품 2 (족자)</div></div>
         <div class="artwork-card item-jokja"><img src="3.jpg" alt="작품 3"><div class="artwork-title">작품 3 (족자)</div></div>
-        <div class="artwork-card item-jokja"><img src="4.jpg" alt="작품 4"><div class="artwork-title">작품 4 (족자)</div></div>
-        <div class="artwork-card item-jokja"><img src="5.jpg" alt="작품 5"><div class="artwork-title">작품 5 (족자)</div></div>
-        <div class="artwork-card item-jokja"><img src="6.jpg" alt="작품 6"><div class="artwork-title">작품 6 (족자)</div></div>
-        <div class="artwork-card item-jokja"><img src="7.jpg" alt="작품 7"><div class="artwork-title">작품 7 (족자)</div></div>
-        <div class="artwork-card item-jokja"><img src="8.jpg" alt="작품 8"><div class="artwork-title">작품 8 (족자)</div></div>
-        <div class="artwork-card item-jokja"><img src="9.jpg" alt="작품 9"><div class="artwork-title">작품 9 (족자)</div></div>
-        <div class="artwork-card item-jokja"><img src="10.jpg" alt="작품 10"><div class="artwork-title">작품 10 (족자)</div></div>
 
-        <!-- 11~15번: 액자 예시 -->
-        <div class="artwork-card item-akja"><img src="11.jpg" alt="작품 11"><div class="artwork-title">작품 11 (액자)</div></div>
-        <div class="artwork-card item-akja"><img src="12.jpg" alt="작품 12"><div class="artwork-title">작품 12 (액자)</div></div>
+        <!-- 4~12번: 지본 (화선지) -->
+        <div class="artwork-card item-jibon"><img src="4.jpg" alt="작품 4"><div class="artwork-title">작품 4 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="5.jpg" alt="작품 5"><div class="artwork-title">작품 5 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="6.jpg" alt="작품 6"><div class="artwork-title">작품 6 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="7.jpg" alt="작품 7"><div class="artwork-title">작품 7 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="8.jpg" alt="작품 8"><div class="artwork-title">작품 8 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="9.jpg" alt="작품 9"><div class="artwork-title">작품 9 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="10.jpg" alt="작품 10"><div class="artwork-title">작품 10 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="11.jpg" alt="작품 11"><div class="artwork-title">작품 11 (지본)</div></div>
+        <div class="artwork-card item-jibon"><img src="12.jpg" alt="작품 12"><div class="artwork-title">작품 12 (지본)</div></div>
+
+        <!-- 13~15번: 액자 -->
         <div class="artwork-card item-akja"><img src="13.jpg" alt="작품 13"><div class="artwork-title">작품 13 (액자)</div></div>
         <div class="artwork-card item-akja"><img src="14.jpg" alt="작품 14"><div class="artwork-title">작품 14 (액자)</div></div>
         <div class="artwork-card item-akja"><img src="15.jpg" alt="작품 15"><div class="artwork-title">작품 15 (액자)</div></div>
@@ -127,23 +130,36 @@
 
     <script>
         function filterGallery(category) {
-            // 모든 버튼에서 active 제거 후 클릭한 버튼에만 추가
             const buttons = document.querySelectorAll('.cat-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // 작품 필터링
             const jokjaItems = document.querySelectorAll('.item-jokja');
+            const jibonItems = document.querySelectorAll('.item-jibon');
             const akjaItems = document.querySelectorAll('.item-akja');
 
+            // 전체 보기
             if (category === 'all') {
                 jokjaItems.forEach(item => item.classList.remove('hidden'));
+                jibonItems.forEach(item => item.classList.remove('hidden'));
                 akjaItems.forEach(item => item.classList.remove('hidden'));
-            } else if (category === 'jokja') {
+            } 
+            // 족자 선택
+            else if (category === 'jokja') {
                 jokjaItems.forEach(item => item.classList.remove('hidden'));
+                jibonItems.forEach(item => item.classList.add('hidden'));
                 akjaItems.forEach(item => item.classList.add('hidden'));
-            } else if (category === 'akja') {
+            } 
+            // 지본 선택
+            else if (category === 'jibon') {
                 jokjaItems.forEach(item => item.classList.add('hidden'));
+                jibonItems.forEach(item => item.classList.remove('hidden'));
+                akjaItems.forEach(item => item.classList.add('hidden'));
+            } 
+            // 액자 선택
+            else if (category === 'akja') {
+                jokjaItems.forEach(item => item.classList.add('hidden'));
+                jibonItems.forEach(item => item.classList.add('hidden'));
                 akjaItems.forEach(item => item.classList.remove('hidden'));
             }
         }
