@@ -18,7 +18,7 @@
         }
         body {
             font-family: 'Noto Serif KR', serif, sans-serif;
-            background-color: #fbf9f5;
+            background-color: #f5f2ec;
             color: #222;
             display: flex;
             justify-content: center;
@@ -26,122 +26,143 @@
             min-height: 100vh;
             padding: 20px;
         }
-        /* 스케치하신 전체 카드 틀 /
-        .sketch-container {
+        /* 스케치하신 전체 틀 */
+        .sketch-card {
             background-color: #ffffff;
             width: 100%;
-            max-width: 650px;
-            border-radius: 20px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+            max-width: 480px;
+            border: 2px solid #333;
+            border-radius: 16px;
+            padding: 35px 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
-            padding: 40px 35px;
+            min-height: 520px;
             position: relative;
         }
-        / 왼쪽 영역: 메뉴, 타이틀, 설명 /
-        .left-section {
-            flex: 1;
-            text-align: left;
-            padding-right: 20px;
+        
+        /* 상단: 왼쪽 메뉴/타이틀 & 오른쪽 세로 액자 */
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
         }
-        .menu-icon {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            color: #444;
-            cursor: pointer;
+
+        /* 왼쪽 영역 */
+        .left-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+            padding-top: 5px;
         }
-        .brand-title {
-            font-size: 1.8rem;
+        .menu-box {
+            width: 28px;
+            height: 28px;
+            border: 2px solid #333;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .title-area {
+            font-size: 2rem;
             font-weight: bold;
             color: #111;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
+            line-height: 1.2;
         }
-        .brand-desc {
+        .desc-area {
             font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            word-break: keep-all;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 5px;
         }
-        / 오른쪽 영역: 세로형 대표 작품 액자 /
-        .right-section {
-            width: 200px;
+
+        /* 오른쪽: 세로형 작품 액자 */
+        .right-artwork {
+            width: 160px;
             flex-shrink: 0;
-            text-align: center;
         }
-        .artwork-frame {
+        .frame-box {
             width: 100%;
-            height: 280px;
-            object-fit: contain;
-            background-color: #f5f2eb;
-            border: 1px solid #e5e0d8;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            display: block;
+            height: 320px;
+            border: 2px solid #333;
+            border-radius: 6px;
+            padding: 6px;
+            background-color: #faf9f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
-        / 하단 버튼/링크 영역 */
-        .bottom-action {
-            position: absolute;
-            bottom: 20px;
-            left: 35px;
-            right: 35px;
+        .frame-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* 하단 영역 (http:// 및 입장 버튼) */
+        .bottom-section {
+            border-top: 2px solid #333;
+            padding-top: 20px;
+            margin-top: 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
         }
-        .btn-link {
+        .site-link {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #111;
             text-decoration: none;
-            color: #8b2626;
+        }
+        .site-link:hover {
+            text-decoration: underline;
+        }
+        .enter-btn {
+            background-color: #8b2626;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
             font-weight: bold;
             font-size: 0.95rem;
         }
-        .btn-link:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            .sketch-container {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px 70px 20px;
-            }
-            .left-section {
-                padding-right: 0;
-                margin-bottom: 25px;
-            }
-            .bottom-action {
-                left: 20px;
-                right: 20px;
-            }
+        .enter-btn:hover {
+            background-color: #6b1c1c;
         }
     </style>
 </head>
 <body>
 
-    <div class="sketch-container">
-        <!-- 왼쪽: 메뉴 및 K-서예 타이틀 영역 -->
-        <div class="left-section">
-            <div class="menu-icon">≡</div>
-            <div class="brand-title">K-서예 갤러리</div>
-            <p class="brand-desc">
-                붓끝으로 피워낸 墨香,<br>
-                삶의 깊이와 평안을 담다.
-            </p>
-            <a href="gallery.html" class="btn-link">작품 보러가기 →</a>
+    <div class="sketch-card">
+        <!-- 상단 2열 배치 -->
+        <div class="top-section">
+            <div class="left-content">
+                <div class="menu-box">□</div>
+                <div class="title-area">K-서예</div>
+                <div class="desc-area">
+                    붓끝으로 피워낸 墨香<br>
+                    원당 김제운
+                </div>
+            </div>
+
+            <div class="right-artwork">
+                <div class="frame-box">
+                    <img src="1.jpg" alt="서예 작품">
+                </div>
+            </div>
         </div>
 
-        <!-- 오른쪽: 세로형 작품 액자 영역 (스케치의 '복/애' 느낌) -->
-        <div class="right-section">
-            <img src="1.jpg" alt="대표 작품" class="artwork-frame">
-        </div>
-
-        <!-- 하단 영역 -->
-        <div class="bottom-action">
-            <span style="font-size: 0.85rem; color: #888;">원당 김제운 · 소장 권영자</span>
-            <a href="gallery.html" class="btn-link" style="color: #555;">서예 이야기</a>
+        <!-- 하단 링크 영역 -->
+        <div class="bottom-section">
+            <a href="gallery.html" class="site-link">http:// 작품 감상</a>
+            <a href="gallery.html" class="enter-btn">입장하기 →</a>
         </div>
     </div>
 
