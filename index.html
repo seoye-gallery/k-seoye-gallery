@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>원당 서예 갤러리</title>
     
-    <!-- 카카오톡, 문자 공유 시 미리보기 카드 설정 -->
-    <meta property="og:title" content="원당 서예 갤러리 ｜ 원당 김제운 작가">
-    <meta property="og:description" content="붓끝으로 피워낸 墨香, 삶의 깊이와 평안을 담다.">
+    <!-- 카카오톡, 문자 공유 시 미리보기 카드 설정 (원하시는 스타일 반영) -->
+    <meta property="og:title" content="원당 서예 갤러리 ｜ 원당 김제운 작가 · 소장가 권영자">
+    <meta property="og:description" content="붓끝으로 피워낸 墨香, 삶의 깊이와 평안을 담다. 원당 김제운 작가의 소중한 서예 작품 컬렉션을 소개합니다.">
     <meta property="og:image" content="1.jpg">
     <meta property="og:type" content="website">
 
@@ -37,36 +37,44 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
             text-align: center;
-            padding: 40px 25px;
+            padding: 35px 25px;
         }
-        .intro-image {
-            width: 100%;
-            max-height: 280px;
-            object-fit: contain;
-            background-color: #fbf9f5;
-            border-radius: 8px;
-            margin-bottom: 30px;
+        /* 여러 작품 미리보기 이미지 배열 스타일 */
+        .preview-images {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 25px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+        .preview-images img {
+            width: 30%;
+            max-height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            background-color: #f0ede6;
         }
         .intro-hanja {
             color: #8b2626;
-            font-size: 1.05rem;
+            font-size: 1rem;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 500;
         }
         .intro-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             line-height: 1.4;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #111;
             word-break: keep-all;
         }
         .intro-desc {
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #666;
             line-height: 1.7;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             word-break: keep-all;
         }
         .btn-container {
@@ -79,14 +87,14 @@
             display: inline-block;
             background-color: #8b2626;
             color: #fff;
-            padding: 15px 35px;
+            padding: 14px 30px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: bold;
             transition: background-color 0.3s;
             width: 100%;
-            max-width: 280px;
+            max-width: 260px;
         }
         .btn-enter:hover {
             background-color: #6b1c1c;
@@ -96,24 +104,26 @@
 <body>
 
     <div class="intro-card">
-        <!-- 대표 이미지 -->
-        <img src="1.jpg" alt="원당 김제운 작가 작품" class="intro-image">
+        <!-- 보내주신 캡처처럼 여러 작품 미리보기 이미지를 나란히 배치 -->
+        <div class="preview-images">
+            <img src="1.jpg" alt="작품 1">
+            <img src="2.jpg" alt="작품 2">
+            <img src="3.jpg" alt="작품 3">
+        </div>
         
         <div class="intro-content">
             <div class="intro-hanja">韓國 書藝 · 元堂 金濟雲 藝苑</div>
             <h1 class="intro-title">
-                붓끝으로 피워낸<br>
-                墨香,<br>
-                삶의 깊이와 평안을<br>
-                담다
+                붓끝으로 피워낸 墨香,<br>
+                삶의 깊이와 평안을 담다
             </h1>
             <p class="intro-desc">
-                한 자 한 자에 담긴 붓의 기운과 지극 한 정성.<br>
-                원당 김제운 작가의 컬렉션을 전합니다.
+                한 자 한 자에 담긴 붓의 기운과 지극한 정성.<br>
+                원당 김제운 작가의 서예 컬렉션을 소개합니다.
             </p>
             
             <div class="btn-container">
-                <!-- 갤러리 목록으로 연결 -->
+                <!-- 갤러리 페이지로 이동 -->
                 <a href="gallery.html" class="btn-enter">작품 감상하기</a>
             </div>
         </div>
