@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>원당 서예 갤러리</title>
+    <title>K-서예 갤러리</title>
     
     <meta property="og:title" content="원당 서예 갤러리 ｜ 원당 김제운 작가 · 소장가 권영자">
-    <meta property="og:description" content="붓끝으로 피워낸 墨香, 삶의 깊이와 평안을 담다. 원당 김제운 작가의 소중한 서예 작품 컬렉션을 소개합니다.">
+    <meta property="og:description" content="붓끝으로 피워낸 墨香, 삶의 깊이와 평안을 담다.">
     <meta property="og:image" content="1.jpg">
     <meta property="og:type" content="website">
 
@@ -24,110 +24,124 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            text-align: center;
-            padding: 15px;
+            padding: 20px;
         }
-        .intro-card {
+        /* 스케치하신 전체 카드 틀 /
+        .sketch-container {
             background-color: #ffffff;
-            color: #222;
             width: 100%;
-            max-width: 580px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            overflow: hidden;
-            text-align: center;
-            padding: 25px 20px;
-        }
-        .preview-images {
+            max-width: 650px;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
             display: flex;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 20px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 35px;
+            position: relative;
         }
-        .preview-images img {
-            width: 30%;
-            max-height: 120px;
-            object-fit: cover;
-            border-radius: 6px;
-            background-color: #f0ede6;
+        / 왼쪽 영역: 메뉴, 타이틀, 설명 /
+        .left-section {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
         }
-        .intro-hanja {
-            color: #8b2626;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            font-weight: 500;
+        .menu-icon {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #444;
+            cursor: pointer;
         }
-        .intro-title {
-            font-size: 1.7rem;
+        .brand-title {
+            font-size: 1.8rem;
             font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 15px;
             color: #111;
-            word-break: keep-all;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
-        .intro-desc {
-            font-size: 0.98rem;
+        .brand-desc {
+            font-size: 0.95rem;
             color: #666;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             word-break: keep-all;
         }
-        .btn-container {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
+        / 오른쪽 영역: 세로형 대표 작품 액자 /
+        .right-section {
+            width: 200px;
+            flex-shrink: 0;
+            text-align: center;
         }
-        .btn-enter {
-            display: inline-block;
-            background-color: #8b2626;
-            color: #fff;
-            padding: 12px 24px;
+        .artwork-frame {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            background-color: #f5f2eb;
+            border: 1px solid #e5e0d8;
             border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            display: block;
+        }
+        / 하단 버튼/링크 영역 */
+        .bottom-action {
+            position: absolute;
+            bottom: 20px;
+            left: 35px;
+            right: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .btn-link {
             text-decoration: none;
-            font-size: 1rem;
+            color: #8b2626;
             font-weight: bold;
-            transition: background-color 0.3s;
-            flex: 1;
-            min-width: 130px;
-            max-width: 200px;
+            font-size: 0.95rem;
         }
-        .btn-enter:hover {
-            background-color: #6b1c1c;
+        .btn-link:hover {
+            text-decoration: underline;
         }
-        .btn-story {
-            background-color: #4a4a4a;
-        }
-        .btn-story:hover {
-            background-color: #333333;
+        @media (max-width: 600px) {
+            .sketch-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px 70px 20px;
+            }
+            .left-section {
+                padding-right: 0;
+                margin-bottom: 25px;
+            }
+            .bottom-action {
+                left: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="intro-card">
-        <div class="preview-images">
-            <img src="1.jpg" alt="서예 작품 1">
-            <img src="2.jpg" alt="서예 작품 2">
-            <img src="3.jpg" alt="서예 작품 3">
-        </div>
-        
-        <div class="intro-content">
-            <div class="intro-hanja">韓國 書藝 · 元堂 金濟雲 藝苑</div>
-            <h1 class="intro-title">
+    <div class="sketch-container">
+        <!-- 왼쪽: 메뉴 및 K-서예 타이틀 영역 -->
+        <div class="left-section">
+            <div class="menu-icon">≡</div>
+            <div class="brand-title">K-서예 갤러리</div>
+            <p class="brand-desc">
                 붓끝으로 피워낸 墨香,<br>
-                삶의 깊이와 평안을 담다
-            </h1>
-            <p class="intro-desc">
-                한 자 한 자에 담긴 붓의 기운과 지극한 정성.<br>
-                원당 김제운 작가의 서예 컬렉션을 소개합니다.
+                삶의 깊이와 평안을 담다.
             </p>
-            
-            <div class="btn-container">
-                <a href="gallery.html" class="btn-enter">작품 보기</a>
-                <a href="gallery.html" class="btn-enter btn-story">서예 이야기</a>
-            </div>
+            <a href="gallery.html" class="btn-link">작품 보러가기 →</a>
+        </div>
+
+        <!-- 오른쪽: 세로형 작품 액자 영역 (스케치의 '복/애' 느낌) -->
+        <div class="right-section">
+            <img src="1.jpg" alt="대표 작품" class="artwork-frame">
+        </div>
+
+        <!-- 하단 영역 -->
+        <div class="bottom-action">
+            <span style="font-size: 0.85rem; color: #888;">원당 김제운 · 소장 권영자</span>
+            <a href="gallery.html" class="btn-link" style="color: #555;">서예 이야기</a>
         </div>
     </div>
 
