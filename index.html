@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>원당 서예 갤러리</title>
     
-    <!-- 카카오톡, 문자 공유 시 미리보기 카드 설정 (원하시는 스타일 반영) -->
+    <!-- 카카오톡, 문자 공유 시 미리보기 카드 설정 -->
     <meta property="og:title" content="원당 서예 갤러리 ｜ 원당 김제운 작가 · 소장가 권영자">
     <meta property="og:description" content="붓끝으로 피워낸 墨香, 삶의 깊이와 평안을 담다. 원당 김제운 작가의 소중한 서예 작품 컬렉션을 소개합니다.">
     <meta property="og:image" content="1.jpg">
@@ -26,60 +26,58 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
         }
         .intro-card {
             background-color: #ffffff;
             color: #222;
             width: 100%;
-            max-width: 600px;
+            max-width: 580px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
             text-align: center;
-            padding: 35px 25px;
+            padding: 25px 20px;
         }
-        /* 여러 작품 미리보기 이미지 배열 스타일 */
+        /* 여러 작품 미리보기 이미지 배열 (잘림 방지) */
         .preview-images {
             display: flex;
             gap: 8px;
             justify-content: center;
-            margin-bottom: 25px;
-            overflow-x: auto;
-            padding-bottom: 5px;
+            margin-bottom: 20px;
         }
         .preview-images img {
             width: 30%;
-            max-height: 140px;
+            max-height: 120px;
             object-fit: cover;
             border-radius: 6px;
             background-color: #f0ede6;
         }
         .intro-hanja {
             color: #8b2626;
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 2px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 500;
         }
         .intro-title {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: bold;
             line-height: 1.4;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #111;
             word-break: keep-all;
         }
         .intro-desc {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: #666;
-            line-height: 1.7;
-            margin-bottom: 30px;
+            line-height: 1.6;
+            margin-bottom: 25px;
             word-break: keep-all;
         }
         .btn-container {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -87,28 +85,35 @@
             display: inline-block;
             background-color: #8b2626;
             color: #fff;
-            padding: 14px 30px;
+            padding: 12px 24px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: bold;
             transition: background-color 0.3s;
-            width: 100%;
-            max-width: 260px;
+            flex: 1;
+            min-width: 130px;
+            max-width: 200px;
         }
         .btn-enter:hover {
             background-color: #6b1c1c;
+        }
+        .btn-story {
+            background-color: #4a4a4a;
+        }
+        .btn-story:hover {
+            background-color: #333333;
         }
     </style>
 </head>
 <body>
 
     <div class="intro-card">
-        <!-- 보내주신 캡처처럼 여러 작품 미리보기 이미지를 나란히 배치 -->
+        <!-- 작품 미리보기 3개 나란히 -->
         <div class="preview-images">
-            <img src="1.jpg" alt="작품 1">
-            <img src="2.jpg" alt="작품 2">
-            <img src="3.jpg" alt="작품 3">
+            <img src="1.jpg" alt="서예 작품 1">
+            <img src="2.jpg" alt="서예 작품 2">
+            <img src="3.jpg" alt="서예 작품 3">
         </div>
         
         <div class="intro-content">
@@ -123,8 +128,9 @@
             </p>
             
             <div class="btn-container">
-                <!-- 갤러리 페이지로 이동 -->
-                <a href="gallery.html" class="btn-enter">작품 감상하기</a>
+                <!-- 작품 보기 및 서예 이야기 버튼 모두 gallery.html로 연동 -->
+                <a href="gallery.html" class="btn-enter">작품 보기</a>
+                <a href="gallery.html" class="btn-enter btn-story">서예 이야기</a>
             </div>
         </div>
     </div>
