@@ -10,8 +10,9 @@
         
         /* 상단 헤더 영역 */
         header { 
+            position: relative;
             text-align: center; 
-            padding: 35px 20px; 
+            padding: 35px 20px 25px 20px; 
             max-width: 900px; 
             margin: 0 auto 30px auto; 
             border-bottom: 2px solid #333; 
@@ -19,24 +20,45 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .header-sub { color: #8b2626; font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; }
-        header h1 { font-size: 1.8rem; color: #111; margin-bottom: 15px; }
         
-        /* 상단 네비게이션 버튼 바 (작품보기 / 작품상세보기 / 작가·문의) */
+        /* 상단 우측 언어 선택 바 (한 EN 日 中) */
+        .top-lang-bar {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 5px;
+        }
+        .lang-badge {
+            border: 1px solid #666;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+        .lang-badge:hover {
+            background-color: #f0f0f0;
+        }
+
+        .header-sub { color: #8b2626; font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 8px; font-weight: bold; margin-top: 10px; }
+        header h1 { font-size: 1.8rem; color: #111; margin-bottom: 20px; }
+        
+        /* 네비게이션 버튼 바 (작품보기 / 작품상세보기 / 작가·문의) */
         .nav-buttons {
             display: flex;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 15px;
         }
         .nav-btn {
             background-color: #4a4a4a;
             color: #fff;
-            padding: 8px 16px;
+            padding: 9px 18px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: bold;
             transition: background 0.2s;
         }
@@ -71,7 +93,7 @@
         .card-title { font-weight: bold; font-size: 1.05rem; margin: 12px 0 4px; color: #111; }
         .card-desc { font-size: 0.85rem; color: #666; }
 
-        /* 하단 대문으로 가기 버튼 */
+        /* 하단 이동 버튼 */
         .back-btn-container { text-align: center; margin: 40px 0; }
         .back-btn { 
             display: inline-block; 
@@ -83,15 +105,31 @@
             font-weight: bold;
         }
         .back-btn:hover { background: #111; }
+
+        @media (max-width: 600px) {
+            .top-lang-bar {
+                position: static;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- 스케치하신 우측 상단 언어 선택 버튼 -->
+        <div class="top-lang-bar">
+            <span class="lang-badge">한</span>
+            <span class="lang-badge">EN</span>
+            <span class="lang-badge">日</span>
+            <span class="lang-badge">中</span>
+        </div>
+
         <div class="header-sub">韓國 書藝 · 元堂 金濟雲</div>
         <h1>붓끝으로 피워낸 묵향, 삶의 깊이를 담다</h1>
         
-        <!-- 스케치하신 상단 메뉴 버튼들 -->
+        <!-- 네비게이션 메뉴 버튼 -->
         <div class="nav-buttons">
             <a href="gallery.html" class="nav-btn active">작품보기</a>
             <a href="detail.html" class="nav-btn">작품상세보기</a>
@@ -110,7 +148,6 @@
             <div class="card-title">산 (山)</div>
             <div class="card-desc">원당 김제운 작 / 소장 권영자</div>
         </div>
-        <!-- 추후 사진을 더 올리시면 아래에 카드가 자동으로 추가됩니다 -->
     </div>
 
     <div class="back-btn-container">
