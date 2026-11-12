@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>작가 소개 · 문의 ｜ K-서예 갤러리</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Serif KR', serif, sans-serif; background-color: #fbf9f5; color: #222; padding: 20px; }
+        
+        .contact-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid #333;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .top-lang-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 6px;
+            margin-bottom: 15px;
+        }
+        .lang-badge {
+            border: 1px solid #666;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+        }
+
+        header { 
+            text-align: center; 
+            padding-bottom: 20px; 
+            margin-bottom: 30px; 
+            border-bottom: 2px solid #333; 
+        }
+        .header-sub { color: #8b2626; font-size: 0.95rem; font-weight: bold; margin-bottom: 5px; }
+        header h1 { font-size: 1.8rem; color: #111; }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-card {
+            background: #faf9f6;
+            border: 1px solid #e5e0d8;
+            border-radius: 10px;
+            padding: 22px;
+        }
+        .section-card h2 {
+            font-size: 1.2rem;
+            color: #8b2626;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #8b2626;
+            padding-bottom: 6px;
+        }
+
+        .artist-desc {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .info-item {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+            color: #555;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+        .form-group textarea {
+            height: 90px;
+            resize: vertical;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #8b2626;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+        .btn-submit:hover { background-color: #6b1c1c; }
+
+        .btn-container {
+            text-align: center;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+        .action-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .action-btn:hover { background: #111; }
+
+        @media (max-width: 768px) {
+            .contact-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <div class="top-lang-bar">
+            <span class="lang-badge">한</span>
+            <span class="lang-badge">EN</span>
+            <span class="lang-badge">日</span>
+            <span class="lang-badge">中</span>
+        </div>
+
+        <header>
+            <div class="header-sub">韓國 書藝 · 元堂 金濟雲</div>
+            <h1>작가 소개 및 문의하기</h1>
+        </header>
+
+        <div class="contact-content">
+            <div class="section-card">
+                <h2>작가 소개</h2>
+                <div class="artist-desc">
+                    <p><strong>원당 김제운 서예작가</strong></p>
+                    <p style="margin-top: 8px;">붓끝으로 피워낸 묵향 속에 삶의 깊이와 철학을 담아내는 한국 서예 작가입니다.</p>
+                    <p style="margin-top: 12px;">전통 필법의 조화와 현대적 조형미를 아우르며, 작품 하나하나에 이웃에 대한 따뜻한 시선과 삶의 신념을 녹여내고 있습니다.</p>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>작가 · 문의</h2>
+                <div class="info-item"><strong>• 전화:</strong> 5067-7276</div>
+                <div class="info-item" style="margin-bottom: 18px;"><strong>• 이메일:</strong> 문의가능</div>
+
+                <form action="#" method="post" onsubmit="alert('문의가 정상적으로 전송되었습니다.'); return false;">
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" placeholder="성함을 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" name="phone" placeholder="연락처를 입력하세요" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">내용</label>
+                        <textarea id="message" name="message" placeholder="문의하실 내용을 입력하세요" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">문의 보내기</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="gallery.html" class="action-btn">← 작품 목록으로 이동</a>
+        </div>
+    </div>
+
+</body>
+</html>
