@@ -11,7 +11,7 @@
         .contact-container {
             background-color: #ffffff;
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             border: 2px solid #333;
             border-radius: 16px;
@@ -46,7 +46,7 @@
 
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 30px;
             margin-bottom: 30px;
         }
@@ -65,15 +65,25 @@
             padding-bottom: 6px;
         }
 
-        .artist-desc {
-            font-size: 0.95rem;
+        /* 약력 리스트 스타일 */
+        .history-list {
+            list-style: none;
+            font-size: 0.9rem;
             color: #444;
-            line-height: 1.7;
+            line-height: 1.8;
+            max-height: 480px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        .history-list li {
+            margin-bottom: 6px;
+            border-bottom: 1px dashed #e5dfd5;
+            padding-bottom: 4px;
         }
 
         .info-item {
             font-size: 0.95rem;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #333;
         }
         .form-group {
@@ -95,7 +105,7 @@
             font-size: 0.9rem;
         }
         .form-group textarea {
-            height: 90px;
+            height: 80px;
             resize: vertical;
         }
         .btn-submit {
@@ -143,23 +153,47 @@
         </div>
 
         <header>
-            <div class="header-sub">韓國 書藝 · 元堂 金濟雲</div>
+            <div class="header-sub">韓國 書藝 · 원당 김제운</div>
             <h1>작가 소개 및 문의하기</h1>
         </header>
 
         <div class="contact-content">
+            <!-- 좌측: 작가 약력 소개 -->
             <div class="section-card">
-                <h2>작가 소개</h2>
-                <div class="artist-desc">
-                    <p><strong>원당 김제운 서예작가</strong></p>
-                    <p style="margin-top: 8px;">붓끝으로 피워낸 묵향 속에 삶의 깊이와 철학을 담아내는 한국 서예 작가입니다.</p>
-                    <p style="margin-top: 12px;">전통 필법의 조화와 현대적 조형미를 아우르며, 작품 하나하나에 이웃에 대한 따뜻한 시선과 삶의 신념을 녹여내고 있습니다.</p>
+                <h2>원당 김제운 작가 약력</h2>
+                <div style="font-size: 0.88rem; color: #666; margin-bottom: 12px; font-weight: bold;">
+                    • 2026년 1월 2일 별세 (향년 7주갑 별세)
                 </div>
+                <ul class="history-list">
+                    <li>• 죽림제 한문 한시 서예 수학 (7세)</li>
+                    <li>• 국교 미전 글씨 그림 글짓기 공작 각 1등</li>
+                    <li>• 한국유학회 문예지 시·시조·수필 당선, 한국문협 종로시 협회원</li>
+                    <li>• 초서 작가전 출품</li>
+                    <li>• 숭의대·성신여대 강사, 대한불교 조계사·보문사 출강</li>
+                    <li>• 국전 특선 연 4회 추천작가·초대작가·심사위원</li>
+                    <li>• 국립 현대 미술 초대작가 6회 출품</li>
+                    <li>• 국전 30년 작가전 출품</li>
+                    <li>• KBS TV1,2 MBC 매용마 해 출연휘호</li>
+                    <li>• 10대 서가 초대천 출품, KBS주최 방영</li>
+                    <li>• 국제 서예전 출품 (이사)</li>
+                    <li>• 한국 서예 학원 협회장 (9년)</li>
+                    <li>• 원장전 주최 미도파·대한민국 서예문화 총람 개최</li>
+                    <li>• 서예 교육 공로상 (문교부 장관·서울시장)</li>
+                    <li>• 서울 인석회장, 성석회 고문</li>
+                    <li>• 사단법인 四一九 옥영사업회 지도위원</li>
+                    <li>• 원당 서예회전 주최 (20회)·개인전 6회</li>
+                    <li>• 성균 서예학원장 (창설 41년), 迦仙會 會長</li>
+                    <li>• 대한민국 서가 협회 이사(운영위원·심사위원장)</li>
+                    <li>• 대한민국 서예원로회 부회장</li>
+                    <li>• 한국서화 예술대전 심사위원장·자문위원장·고문</li>
+                </ul>
             </div>
 
+            <!-- 우측: 소장가 연락처 및 문의하기 폼 -->
             <div class="section-card">
-                <h2>작가 · 문의</h2>
-                <div class="info-item"><strong>• 전화:</strong> 5067-7276</div>
+                <h2>소장가 및 문의</h2>
+                <div class="info-item"><strong>• 소장가:</strong> 권영자</div>
+                <div class="info-item"><strong>• 연락처:</strong> 010-5067-2626[span_3](start_span)[span_3](end_span)</div>
                 <div class="info-item" style="margin-bottom: 18px;"><strong>• 이메일:</strong> 문의가능</div>
 
                 <form action="#" method="post" onsubmit="alert('문의가 정상적으로 전송되었습니다.'); return false;">
