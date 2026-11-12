@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>작가 소개 · 문의 ｜ K-서예 갤러리</title>
+    <title>작품 목록 ｜ K-서예 갤러리</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Noto Serif KR', serif, sans-serif; background-color: #fbf9f5; color: #222; padding: 20px; }
         
-        .contact-container {
+        .gallery-container {
             background-color: #ffffff;
             width: 100%;
-            max-width: 950px;
+            max-width: 1050px;
             margin: 0 auto;
             border: 2px solid #333;
             border-radius: 16px;
@@ -38,113 +38,125 @@
         header { 
             text-align: center; 
             padding-bottom: 20px; 
-            margin-bottom: 30px; 
+            margin-bottom: 25px; 
             border-bottom: 2px solid #333; 
         }
         .header-sub { color: #8b2626; font-size: 0.95rem; font-weight: bold; margin-bottom: 5px; }
-        header h1 { font-size: 1.8rem; color: #111; }
+        header h1 { font-size: 1.9rem; color: #111; }
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 30px;
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-bottom: 30px;
         }
-
-        .section-card {
-            background: #faf9f6;
-            border: 1px solid #e5e0d8;
-            border-radius: 10px;
-            padding: 22px;
-        }
-        .section-card h2 {
-            font-size: 1.2rem;
-            color: #8b2626;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #8b2626;
-            padding-bottom: 6px;
-        }
-
-        /* 약력 리스트 스타일 */
-        .history-list {
-            list-style: none;
-            font-size: 0.9rem;
-            color: #444;
-            line-height: 1.8;
-            max-height: 480px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-        .history-list li {
-            margin-bottom: 6px;
-            border-bottom: 1px dashed #e5dfd5;
-            padding-bottom: 4px;
-        }
-
-        .info-item {
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+        .filter-btn {
+            padding: 10px 20px;
+            border: 1.5px solid #333;
+            background-color: #fff;
             color: #333;
-        }
-        .form-group {
-            margin-bottom: 12px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-bottom: 4px;
-            color: #555;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 8px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
         }
-        .form-group textarea {
-            height: 80px;
-            resize: vertical;
-        }
-        .btn-submit {
-            width: 100%;
-            padding: 10px;
+        .filter-btn:hover { background-color: #f2ece4; }
+        .filter-btn.active {
             background-color: #8b2626;
-            color: white;
-            border: none;
+            color: #fff;
+            border-color: #8b2626;
+        }
+
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-bottom: 35px;
+        }
+        .artwork-card {
+            background: #faf9f6;
+            border: 1px solid #dcd5c9;
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .artwork-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border-color: #8b2626;
+        }
+        .artwork-img-box {
+            width: 100%;
+            height: 240px;
+            background-color: #eee9e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid #e5dfd5;
+        }
+        .artwork-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+        .artwork-info {
+            padding: 14px;
+            text-align: center;
+        }
+        .artwork-tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            color: #8b2626;
+            border: 1px solid #8b2626;
+            padding: 1px 7px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+        .artwork-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: #111;
+        }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-top: 2px solid #333;
+            padding-top: 22px;
+        }
+        .nav-btn {
+            padding: 11px 24px;
             border-radius: 6px;
+            text-decoration: none;
             font-weight: bold;
             font-size: 0.95rem;
-            cursor: pointer;
-        }
-        .btn-submit:hover { background-color: #6b1c1c; }
-
-        .btn-container {
-            text-align: center;
-            border-top: 2px solid #333;
-            padding-top: 20px;
-        }
-        .action-btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background: #333;
             color: #fff;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
+            background-color: #333;
         }
-        .action-btn:hover { background: #111; }
+        .nav-btn.accent { background-color: #8b2626; }
+        .nav-btn:hover { opacity: 0.9; }
 
         @media (max-width: 768px) {
-            .contact-content { grid-template-columns: 1fr; }
+            .artwork-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+        }
+        @media (max-width: 480px) {
+            .artwork-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="contact-container">
+    <div class="gallery-container">
         <div class="top-lang-bar">
             <span class="lang-badge">한</span>
             <span class="lang-badge">EN</span>
@@ -154,68 +166,147 @@
 
         <header>
             <div class="header-sub">韓國 書藝 · 원당 김제운</div>
-            <h1>작가 소개 및 문의하기</h1>
+            <h1>작품 갤러리</h1>
         </header>
 
-        <div class="contact-content">
-            <!-- 좌측: 작가 약력 소개 -->
-            <div class="section-card">
-                <h2>원당 김제운 작가 약력</h2>
-                <ul class="history-list">
-                    <li>• 죽림제 한문 한시 서예 수학 (7세)</li>
-                    <li>• 국교 미전 글씨 그림 글짓기 공작 각 1등</li>
-                    <li>• 한국유학회 문예지 시·시조·수필 당선, 한국문협 종로시 협회원</li>
-                    <li>• 초서 작가전 출품</li>
-                    <li>• 숭의대·성신여대 강사, 대한불교 조계사·보문사 출강</li>
-                    <li>• 국전 특선 연 4회 추천작가·초대작가·심사위원</li>
-                    <li>• 국립 현대 미술 초대작가 6회 출품</li>
-                    <li>• 국전 30년 작가전 출품</li>
-                    <li>• KBS TV1,2 MBC 매용마 해 출연휘호</li>
-                    <li>• 10대 서가 초대천 출품, KBS주최 방영</li>
-                    <li>• 국제 서예전 출품 (이사)</li>
-                    <li>• 한국 서예 학원 협회장 (9년)</li>
-                    <li>• 원장전 주최 미도파·대한민국 서예문화 총람 개최</li>
-                    <li>• 서예 교육 공로상 (문교부 장관·서울시장)</li>
-                    <li>• 서울 인석회장, 성석회 고문</li>
-                    <li>• 사단법인 四一九 옥영사업회 지도위원</li>
-                    <li>• 원당 서예회전 주최 (20회)·개인전 6회</li>
-                    <li>• 성균 서예학원장 (창설 41년), 迦仙會 會長</li>
-                    <li>• 대한민국 서가 협회 이사(운영위원·심사위원장)</li>
-                    <li>• 대한민국 서예원로회 부회장</li>
-                    <li>• 한국서화 예술대전 심사위원장·자문위원장·고문</li>
-                    <li>• <strong>2026년 1월 2일 별세</strong></li>
-                </ul>
-            </div>
-
-            <!-- 우측: 소장가 연락처 및 문의하기 폼 -->
-            <div class="section-card">
-                <h2>소장가 및 문의</h2>
-                <div class="info-item"><strong>• 소장가:</strong> 권영자</div>
-                <div class="info-item"><strong>• 연락처:</strong> 010-5067-2626</div>
-                <div class="info-item" style="margin-bottom: 18px;"><strong>• 이메일:</strong> myhanan@daum.net</div>
-
-                <form action="#" method="post" onsubmit="alert('문의가 정상적으로 전송되었습니다.'); return false;">
-                    <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" id="name" name="name" placeholder="성함을 입력하세요" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">연락처</label>
-                        <input type="tel" id="phone" name="phone" placeholder="연락처를 입력하세요" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">내용</label>
-                        <textarea id="message" name="message" placeholder="문의하실 내용을 입력하세요" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">문의 보내기</button>
-                </form>
-            </div>
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterWorks('all', this)">전체 (15)</button>
+            <button class="filter-btn" onclick="filterWorks('jokja', this)">족자 (3)</button>
+            <button class="filter-btn" onclick="filterWorks('jibon', this)">지본 (9)</button>
+            <button class="filter-btn" onclick="filterWorks('frame', this)">액자 (3)</button>
         </div>
 
-        <div class="btn-container">
-            <a href="gallery.html" class="action-btn">← 작품 목록으로 이동</a>
+        <div class="artwork-grid" id="artworkGrid">
+            <a href="detail.html" class="artwork-card" data-category="jokja">
+                <div class="artwork-img-box"><img src="1.jpg" alt="작품 1"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">족자 1</span>
+                    <div class="artwork-title">복(福) · 애(愛)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jokja">
+                <div class="artwork-img-box"><img src="2.jpg" alt="작품 2"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">족자 2</span>
+                    <div class="artwork-title">작품 02 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jokja">
+                <div class="artwork-img-box"><img src="3.jpg" alt="작품 3"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">족자 3</span>
+                    <div class="artwork-title">작품 03 (상세보기)</div>
+                </div>
+            </a>
+
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="4.jpg" alt="작품 4"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 1</span>
+                    <div class="artwork-title">작품 04 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="5.jpg" alt="작품 5"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 2</span>
+                    <div class="artwork-title">작품 05 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="6.jpg" alt="작품 6"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 3</span>
+                    <div class="artwork-title">작품 06 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="7.jpg" alt="작품 7"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 4</span>
+                    <div class="artwork-title">작품 07 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="8.jpg" alt="작품 8"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 5</span>
+                    <div class="artwork-title">작품 08 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="9.jpg" alt="작품 9"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 6</span>
+                    <div class="artwork-title">작품 09 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="10.jpg" alt="작품 10"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 7</span>
+                    <div class="artwork-title">작품 10 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="11.jpg" alt="작품 11"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 8</span>
+                    <div class="artwork-title">작품 11 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="jibon">
+                <div class="artwork-img-box"><img src="12.jpg" alt="작품 12"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">지본 9</span>
+                    <div class="artwork-title">작품 12 (상세보기)</div>
+                </div>
+            </a>
+
+            <a href="detail.html" class="artwork-card" data-category="frame">
+                <div class="artwork-img-box"><img src="13.jpg" alt="작품 13"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">액자 1</span>
+                    <div class="artwork-title">작품 13 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="frame">
+                <div class="artwork-img-box"><img src="14.jpg" alt="작품 14"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">액자 2</span>
+                    <div class="artwork-title">작품 14 (상세보기)</div>
+                </div>
+            </a>
+            <a href="detail.html" class="artwork-card" data-category="frame">
+                <div class="artwork-img-box"><img src="15.jpg" alt="작품 15"></div>
+                <div class="artwork-info">
+                    <span class="artwork-tag">액자 3</span>
+                    <div class="artwork-title">작품 15 (상세보기)</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="bottom-nav">
+            <a href="index.html" class="nav-btn">← 첫 화면으로</a>
+            <a href="contact.html" class="nav-btn accent">작가 · 문의 →</a>
         </div>
     </div>
+
+    <script>
+        function filterWorks(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.artwork-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
