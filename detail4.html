@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>작품 상세 감상 ｜ K-서예 갤러리</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Serif KR', serif, sans-serif; background-color: #fbf9f5; color: #222; padding: 20px; }
+        
+        .detail-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid #333;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        header { 
+            text-align: center; 
+            padding-bottom: 20px; 
+            margin-bottom: 25px; 
+            border-bottom: 2px solid #333; 
+        }
+        .header-sub { color: #8b2626; font-size: 0.95rem; font-weight: bold; margin-bottom: 5px; }
+        header h1 { font-size: 1.8rem; color: #111; }
+
+        /* 작품 이미지 영역 */
+        .artwork-view-box {
+            width: 100%;
+            max-height: 550px;
+            background-color: #eee9e0;
+            border: 1px solid #dcd5c9;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 25px;
+            padding: 12px;
+        }
+        .artwork-view-box img {
+            max-width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+        }
+
+        /* 작품 정보 및 심층 감상 영역 */
+        .info-section {
+            background-color: #faf9f6;
+            border: 1px solid #e5dfd5;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #8b2626;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dcd5c9;
+            padding-bottom: 8px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .info-item span.label {
+            font-weight: bold;
+            color: #555;
+            margin-right: 8px;
+        }
+        
+        .poem-box {
+            background-color: #ffffff;
+            border-ל: 4px solid #8b2626;
+            border-left: 4px solid #8b2626;
+            padding: 18px 22px;
+            margin: 15px 0 22px 0;
+            font-size: 1.02rem;
+            line-height: 1.85;
+        }
+        .poem-box p {
+            margin-bottom: 10px;
+        }
+        .poem-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .description-box {
+            line-height: 1.85;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        /* 하단 이동 버튼 */
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-top: 2px solid #333;
+            padding-top: 22px;
+        }
+        .nav-btn {
+            padding: 11px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #fff;
+            background-color: #333;
+        }
+        .nav-btn.accent {
+            background-color: #8b2626;
+        }
+        .nav-btn:hover { opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="detail-container">
+        <header>
+            <div class="header-sub">韓國 書藝 · 원당 김제운 작품 감상</div>
+            <h1>작품 04 : 수산 (壽山)</h1>
+        </header>
+
+        <!-- 작품 사진 (4.jpg 연결) -->
+        <div class="artwork-view-box">
+            <img src="4.jpg" alt="네 번째 작품 수산">
+        </div>
+
+        <!-- 작품 상세 정보 -->
+        <div class="info-section">
+            <div class="info-title">작품 상세 정보</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">· 분류:</span> 지본 작품 (작품 04)</div>
+                <div class="info-item"><span class="label">· 형식:</span> 전통 서예 작품</div>
+                <div class="info-item"><span class="label">· 중심 대자:</span> 壽山 (수산)</div>
+                <div class="info-item"><span class="label">· 작가:</span> 원당 김제운</div>
+            </div>
+
+            <div class="info-title" style="margin-top: 25px;">원문 및 한글 풀이</div>
+            <div class="poem-box">
+                <p><strong>[중심 글자 (대자)]</strong> 壽山 (수산)<br>
+                <em>- 의미: "산처럼 오래도록 장수함"을 뜻하며, 무병장수를 기원하는 전통적인 글귀입니다.</em></p>
+
+                <p style="margin-top: 12px;"><strong>[오른쪽 협서]</strong> 仁者樂山靜者壽 (인자락산정자수)<br>
+                <em>- 의미: 논어의 "어진 자는 산을 좋아하고(인자요산), 고요한(마음이 평온한) 자는 오래 산다(정자수)"는 구절을 담아, 자연을 사랑하고 마음이 평온하여 장수하는 군자의 성품을 나타냅니다.</em></p>
+
+                <p style="margin-top: 12px;"><strong>[왼쪽 협서]</strong> 山動樂 笑玉主長春 (산동락 소옥주장춘)<br>
+                <em>- 의미: "산이 움직이며 즐거움을 주고, 웃음과 함께 옥 같은 주인이 늘 봄날처럼 평안하고 오래도록 건강하기를 바란다"는 뜻의 시적 표현과 작가의 낙관이 담겨 있습니다.</em></p>
+            </div>
+
+            <div class="info-title">작품 심층 감상</div>
+            <div class="description-box">
+                본 작품은 산처럼 묵묵하고 평안한 마음으로 자연을 즐기며, 무병장수(壽山)와 늘 봄날 같은 평안함이 깃들기를 기원하는 깊은 뜻을 담고 있습니다.<br><br>
+                중심의 묵직한 대자와 정교한 협서가 어우러져 원당 김제운 작가님 특유의 고결한 품격과 따뜻한 기원을 온전히 전해줍니다.
+            </div>
+        </div>
+
+        <!-- 하단 네비게이션 버튼 -->
+        <div class="bottom-nav">
+            <a href="gallery.html" class="nav-btn">← 작품 목록으로</a>
+            <a href="contact.html" class="nav-btn accent">소장 및 문의 →</a>
+        </div>
+    </div>
+
+</body>
+</html>
