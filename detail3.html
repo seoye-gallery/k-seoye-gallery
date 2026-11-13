@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>작품 상세 감상 ｜ K-서예 갤러리</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Serif KR', serif, sans-serif; background-color: #fbf9f5; color: #222; padding: 20px; }
+        
+        .detail-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border: 2px solid #333;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        header { 
+            text-align: center; 
+            padding-bottom: 20px; 
+            margin-bottom: 25px; 
+            border-bottom: 2px solid #333; 
+        }
+        .header-sub { color: #8b2626; font-size: 0.95rem; font-weight: bold; margin-bottom: 5px; }
+        header h1 { font-size: 1.8rem; color: #111; }
+
+        /* 작품 이미지 영역 */
+        .artwork-view-box {
+            width: 100%;
+            max-height: 550px;
+            background-color: #eee9e0;
+            border: 1px solid #dcd5c9;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 25px;
+            padding: 12px;
+        }
+        .artwork-view-box img {
+            max-width: 100%;
+            max-height: 520px;
+            object-fit: contain;
+        }
+
+        /* 작품 정보 및 심층 감상 영역 */
+        .info-section {
+            background-color: #faf9f6;
+            border: 1px solid #e5dfd5;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #8b2626;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #dcd5c9;
+            padding-bottom: 8px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .info-item span.label {
+            font-weight: bold;
+            color: #555;
+            margin-right: 8px;
+        }
+        
+        .poem-box {
+            background-color: #ffffff;
+            border-left: 4px solid #8b2626;
+            padding: 18px 22px;
+            margin: 15px 0 22px 0;
+            font-size: 1.02rem;
+            line-height: 1.85;
+        }
+        .poem-box p {
+            margin-bottom: 10px;
+        }
+        .poem-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .description-box {
+            line-height: 1.85;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        /* 하단 이동 버튼 */
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-top: 2px solid #333;
+            padding-top: 22px;
+        }
+        .nav-btn {
+            padding: 11px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            color: #fff;
+            background-color: #333;
+        }
+        .nav-btn.accent {
+            background-color: #8b2626;
+        }
+        .nav-btn:hover { opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="detail-container">
+        <header>
+            <div class="header-sub">韓國 書藝 · 원당 김제운 작품 감상</div>
+            <h1>족자 03 : 유려한 초서(草書)의 기백</h1>
+        </header>
+
+        <!-- 작품 사진 (3.jpg 연결) -->
+        <div class="artwork-view-box">
+            <img src="3.jpg" alt="세 번째 족자 작품">
+        </div>
+
+        <!-- 작품 상세 정보 -->
+        <div class="info-section">
+            <div class="info-title">작품 상세 정보</div>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">· 분류:</span> 족자 (세 번째 작품)</div>
+                <div class="info-item"><span class="label">· 형식:</span> 전통 세로 족자</div>
+                <div class="info-item"><span class="label">· 필체:</span> 역동적이고 유려한 초서(草書)</div>
+                <div class="info-item"><span class="label">· 작가:</span> 원당 김제운</div>
+            </div>
+
+            <div class="info-title" style="margin-top: 25px;">원문 및 작품 풀이</div>
+            <div class="poem-box">
+                <p><strong>[작품 구성 및 시구]</strong> 자연의 섭리와 선비의 깊은 회포를 읊은 한시 구절<br>
+                <em>- 뜻: 거침없이 흘러내리는 필획 속에 자연과 교감하며 삶의 여유와 풍류를 즐기는 고매한 정신을 담음.</em></p>
+
+                <p style="margin-top: 12px;"><strong>[낙관 및 인장]</strong> 원당(元堂) 김제운 낙관<br>
+                <em>- 뜻: 하단 여백에 작가의 호와 인장을 정중하게 배치하여 작품의 완성도를 높임.</em></p>
+            </div>
+
+            <div class="info-title">작품 심층 감상</div>
+            <div class="description-box">
+                본 작품은 세로 화폭 전체를 굵고 역동적인 <strong>초서(草書)</strong> 필치로 가득 채워, 거침없이 뻗어 나가는 붓의 기백과 유려한 선의 미학이 압도적인 수작입니다.<br><br>
+                먹의 농담(濃淡)과 강약의 리듬이 살아 숨 쉬듯 이어지며, 여백을 정갈하게 채운 낙관과 어우러져 전통 서예의 깊은 예술적 울림을 전해줍니다.
+            </div>
+        </div>
+
+        <!-- 하단 네비게이션 버튼 -->
+        <div class="bottom-nav">
+            <a href="gallery.html" class="nav-btn">← 작품 목록으로</a>
+            <a href="contact.html" class="nav-btn accent">소장 및 문의 →</a>
+        </div>
+    </div>
+
+</body>
+</html>
