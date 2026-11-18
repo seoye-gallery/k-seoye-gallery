@@ -6,90 +6,18 @@
     <title>작품 갤러리 - 원당 김제운</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 갤러리 카드들이 세로로 안 깨지고 가로로 나란히 정렬되도록 완벽 고정 */
-        .gallery-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 35px;
-        }
-        .filter-btn {
-            padding: 10px 22px;
-            font-size: 1rem;
-            border: 1px solid #8B4513;
-            background: #fff;
-            color: #8B4513;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: #8B4513;
-            color: #fff;
-        }
-        .artwork-grid {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 25px !important;
-        }
-        @media (max-width: 768px) {
-            .artwork-grid {
-                grid-template-columns: repeat(1, 1fr) !important;
-            }
-        }
-        .artwork-card {
-            display: block !important;
-            background: #fff !important;
-            border: 1px solid #e0dcd3 !important;
-            border-radius: 8px !important;
-            overflow: hidden !important;
-            text-decoration: none !important;
-            color: inherit !important;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05) !important;
-        }
-        .artwork-img-box {
-            width: 100% !important;
-            height: 320px !important;
-            background-color: #f2efe9 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 15px !important;
-            overflow: hidden !important;
-        }
-        .artwork-img-box img {
-            max-width: 100% !important;
-            max-height: 100% !important;
-            width: auto !important;
-            height: auto !important;
-            object-fit: contain !important;
-        }
-        .artwork-info {
-            padding: 16px !important;
-            text-align: center !important;
-            border-top: 1px solid #eeeae1 !important;
-            background: #fff !important;
-        }
-        .artwork-tag {
-            display: inline-block;
-            font-size: 0.85rem;
-            color: #666;
-            border: 1px solid #ccc;
-            padding: 2px 10px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-        }
-        .artwork-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #222;
-        }
+        .gallery-container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .filter-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 35px; }
+        .filter-btn { padding: 10px 22px; font-size: 1rem; border: 1px solid #8B4513; background: #fff; color: #8B4513; border-radius: 25px; cursor: pointer; font-weight: 600; }
+        .filter-btn:hover, .filter-btn.active { background: #8B4513; color: #fff; }
+        .artwork-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 25px !important; }
+        @media (max-width: 768px) { .artwork-grid { grid-template-columns: repeat(1, 1fr) !important; } }
+        .artwork-card { display: block !important; background: #fff !important; border: 1px solid #e0dcd3 !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; box-shadow: 0 3px 10px rgba(0,0,0,0.05) !important; cursor: pointer !important; }
+        .artwork-img-box { width: 100% !important; height: 220px !important; background-color: #f2efe9 !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 10px !important; overflow: hidden !important; }
+        .artwork-img-box img { max-width: 100% !important; max-height: 100% !important; width: auto !important; height: auto !important; object-fit: contain !important; }
+        .artwork-info { padding: 16px !important; text-align: center !important; border-top: 1px solid #eeeae1 !important; background: #fff !important; }
+        .artwork-tag { display: inline-block; font-size: 0.85rem; color: #666; border: 1px solid #ccc; padding: 2px 10px; border-radius: 4px; margin-bottom: 8px; }
+        .artwork-title { font-size: 1.05rem; font-weight: 700; color: #222; }
     </style>
 </head>
 <body>
@@ -109,127 +37,65 @@
         </div>
 
         <div class="artwork-grid" id="artworkGrid">
-            <!-- 족자 3점 -->
             <a href="detail1.html" class="artwork-card" data-category="jokja">
                 <div class="artwork-img-box"><img src="1.jpg" alt="작품 1"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">족자 1</span>
-                    <div class="artwork-title">작품 01 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">족자 1</span><div class="artwork-title">작품 01 (상세보기)</div></div>
             </a>
-
             <a href="detail2.html" class="artwork-card" data-category="jokja">
                 <div class="artwork-img-box"><img src="2.jpg" alt="작품 2"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">족자 2</span>
-                    <div class="artwork-title">작품 02 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">족자 2</span><div class="artwork-title">작품 02 (상세보기)</div></div>
             </a>
-
             <a href="detail3.html" class="artwork-card" data-category="jokja">
                 <div class="artwork-img-box"><img src="3.jpg" alt="작품 3"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">족자 3</span>
-                    <div class="artwork-title">작품 03 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">족자 3</span><div class="artwork-title">작품 03 (상세보기)</div></div>
             </a>
-
-            <!-- 지본 9점 -->
             <a href="detail4.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="4.jpg" alt="작품 4"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 1</span>
-                    <div class="artwork-title">작품 04 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 1</span><div class="artwork-title">작품 04 (상세보기)</div></div>
             </a>
-
             <a href="detail5.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="5.jpg" alt="작품 5"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 2</span>
-                    <div class="artwork-title">작품 05 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 2</span><div class="artwork-title">작품 05 (상세보기)</div></div>
             </a>
-
             <a href="detail6.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="6.jpg" alt="작품 6"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 3</span>
-                    <div class="artwork-title">작품 06 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 3</span><div class="artwork-title">작품 06 (상세보기)</div></div>
             </a>
-
             <a href="detail7.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="7.jpg" alt="작품 7"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 4</span>
-                    <div class="artwork-title">작품 07 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 4</span><div class="artwork-title">작품 07 (상세보기)</div></div>
             </a>
-
             <a href="detail8.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="8.jpg" alt="작품 8"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 5</span>
-                    <div class="artwork-title">작품 08 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 5</span><div class="artwork-title">작품 08 (상세보기)</div></div>
             </a>
-
             <a href="detail9.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="9.jpg" alt="작품 9"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 6</span>
-                    <div class="artwork-title">작품 09 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 6</span><div class="artwork-title">작품 09 (상세보기)</div></div>
             </a>
-
             <a href="detail10.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="10.jpg" alt="작품 10"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 7</span>
-                    <div class="artwork-title">작품 10 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 7</span><div class="artwork-title">작품 10 (상세보기)</div></div>
             </a>
-
             <a href="detail11.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="11.jpg" alt="작품 11"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 8</span>
-                    <div class="artwork-title">작품 11 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 8</span><div class="artwork-title">작품 11 (상세보기)</div></div>
             </a>
-
             <a href="detail12.html" class="artwork-card" data-category="jibon">
                 <div class="artwork-img-box"><img src="12.jpg" alt="작품 12"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">지본 9</span>
-                    <div class="artwork-title">작품 12 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">지본 9</span><div class="artwork-title">작품 12 (상세보기)</div></div>
             </a>
-
-            <!-- 액자 3점 -->
             <a href="detail13.html" class="artwork-card" data-category="frame">
                 <div class="artwork-img-box"><img src="13.jpg" alt="작품 13"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">액자 1</span>
-                    <div class="artwork-title">작품 13 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">액자 1</span><div class="artwork-title">작품 13 (상세보기)</div></div>
             </a>
-
             <a href="detail14.html" class="artwork-card" data-category="frame">
                 <div class="artwork-img-box"><img src="14.jpg" alt="작품 14"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">액자 2</span>
-                    <div class="artwork-title">작품 14 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">액자 2</span><div class="artwork-title">작품 14 (상세보기)</div></div>
             </a>
-
             <a href="detail15.html" class="artwork-card" data-category="frame">
                 <div class="artwork-img-box"><img src="15.jpg" alt="작품 15"></div>
-                <div class="artwork-info">
-                    <span class="artwork-tag">액자 3</span>
-                    <div class="artwork-title">작품 15 (상세보기)</div>
-                </div>
+                <div class="artwork-info"><span class="artwork-tag">액자 3</span><div class="artwork-title">작품 15 (상세보기)</div></div>
             </a>
         </div>
 
@@ -242,12 +108,11 @@
         function filterWorks(category, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             document.querySelectorAll('.artwork-card').forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
-                    card.style.setProperty('display', 'block', 'important');
+                    card.style.setProperty('display', 'block', 'IMPORTANT');
                 } else {
-                    card.style.setProperty('display', 'none', 'important');
+                    card.style.setProperty('display', 'none', 'IMPORTANT');
                 }
             });
         }
