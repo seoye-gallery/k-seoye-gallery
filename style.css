@@ -69,3 +69,10 @@ artwork-display-box img {
     display: block;
     margin: 0 auto;
 }
+artwork-display-box img {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
