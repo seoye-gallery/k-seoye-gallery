@@ -12,7 +12,11 @@
         .filter-btn:hover, .filter-btn.active { background: #8B4513; color: #fff; }
         .artwork-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 25px !important; }
         @media (max-width: 768px) { .artwork-grid { grid-template-columns: repeat(1, 1fr) !important; } }
-        .artwork-card { display: block !important; background: #fff !important; border: 1px solid #e0dcd3 !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; box-shadow: 0 3px 10px rgba(0,0,0,0.05) !important; cursor: pointer !important; }
+        
+        /* 핵심 수정: 카드가 링크로서 클릭이 확실히 되도록 display를 flex로 변경 */
+        .artwork-card { display: flex !important; flex-direction: column !important; background: #fff !important; border: 1px solid #e0dcd3 !important; border-radius: 8px !important; overflow: hidden !important; text-decoration: none !important; color: inherit !important; box-shadow: 0 3px 10px rgba(0,0,0,0.05) !important; cursor: pointer !important; }
+        .artwork-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+
         .artwork-img-box { width: 100% !important; height: 220px !important; background-color: #f2efe9 !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 10px !important; overflow: hidden !important; }
         .artwork-img-box img { max-width: 100% !important; max-height: 100% !important; width: auto !important; height: auto !important; object-fit: contain !important; }
         .artwork-info { padding: 16px !important; text-align: center !important; border-top: 1px solid #eeeae1 !important; background: #fff !important; }
@@ -110,7 +114,7 @@
             btn.classList.add('active');
             document.querySelectorAll('.artwork-card').forEach(card => {
                 if (category === 'all' || card.dataset.category === category) {
-                    card.style.setProperty('display', 'block', 'IMPORTANT');
+                    card.style.setProperty('display', 'flex', 'IMPORTANT');
                 } else {
                     card.style.setProperty('display', 'none', 'IMPORTANT');
                 }
