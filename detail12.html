@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>작품 12 : 하늘에 밝은 태양이 있는 한 - 원당 김제운 작품 갤러리</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .top-lang-bar {
+            background: #f4f1ea;
+            border-bottom: 1px solid #dfd9ce;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .top-lang-bar .lang-label {
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 600;
+        }
+        .skiptranslate iframe {
+            display: none !important;
+        }
+        body {
+            top: 0 !important;
+        }
+    </style>
 </head>
 <body>
+    <div class="top-lang-bar">
+        <span class="lang-label">언어 선택:</span>
+        <div id="google_translate_element"></div>
+    </div>
+
     <header class="gallery-header">
         <div class="header-content">
             <p class="site-category">한국 전통·원당 김제운 작품 감상</p>
@@ -14,7 +42,7 @@
         </div>
     </header>
 
-    <main class="detail-container" style="max-width: 850px; margin: 0 auto; padding: 40px 20px;">
+    <main class="detail-container" style="max-width: 850px; margin: 0 auto; padding: 25px 20px 40px;">
         <!-- 작품 사진 박스 -->
         <div class="artwork-display-box" style="background: #fff; border: 1px solid #e0dcd3; border-radius: 8px; padding: 25px; text-align: center; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);">
             <img src="12.jpg" alt="작품 12 하늘에 밝은 태양이 있는 한" style="max-width: 100%; max-height: 550px; width: auto; height: auto; display: block; margin: 0 auto;">
@@ -53,11 +81,23 @@
             </p>
         </div>
 
-        <!-- 하단 나란한 버튼 영역 -->
-        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px; margin-bottom: 40px;">
-            <a href="gallery.html" style="display: inline-block; padding: 12px 28px; background-color: #333; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">← 작품 목록으로</a>
-            <a href="mailto:myhanan@daum.net?subject=작품 12 (하늘에 밝은 태양이 있는 한) 소장 및 문의" style="display: inline-block; padding: 12px 28px; background-color: #7a2e2e; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">소장 및 문의 →</a>
+        <!-- 하단 버튼 영역 -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; margin-bottom: 40px;">
+            <a href="gallery.html" style="display: inline-block; padding: 12px 24px; background-color: #333; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">← 작품 목록으로</a>
+            <a href="artist.html" style="display: inline-block; padding: 12px 24px; background-color: #555; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">작가 소개</a>
+            <a href="mailto:myhanan0222@gmail.com?subject=작품 12 (하늘에 밝은 태양이 있는 한) 소장 및 문의" style="display: inline-block; padding: 12px 24px; background-color: #7a2e2e; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">소장 및 문의 →</a>
         </div>
     </main>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'ko',
+                includedLanguages: 'ko,en,ja,zh-CN',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
