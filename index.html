@@ -23,9 +23,8 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            top: 0 !important;
         }
-        /* 스케치하신 전체 대문 틀 /
+        /* 전체 대문 틀 /
         .main-card {
             background-color: #ffffff;
             width: 100%;
@@ -166,7 +165,7 @@
         .btn-enter:hover {
             background-color: #6b1c1c;
         }
-        / 하단: 주소 표기 영역 /
+        / 하단: 주소 표기 영역 */
         .bottom-url-bar {
             border-top: 2px solid #333;
             padding-top: 15px;
@@ -174,14 +173,6 @@
             color: #333;
             font-weight: bold;
             letter-spacing: 0.5px;
-        }
-        / Google 번역 기본 배너 숨김 */
-        .skiptranslate iframe,
-        .goog-te-banner-frame {
-            display: none !important;
-        }
-        #google_translate_element_hidden {
-            display: none;
         }
         @media (max-width: 600px) {
             .top-section {
@@ -195,15 +186,13 @@
     </style>
 </head>
 <body>
-    <div id="google_translate_element_hidden"></div>
-
     <div class="main-card">
         <!-- 최상단 언어 선택 -->
         <div class="top-lang-bar">
-            <button type="button" class="lang-badge active" data-lang="ko" onclick="switchLanguage('ko', this)">한</button>
-            <button type="button" class="lang-badge" data-lang="en" onclick="switchLanguage('en', this)">EN</button>
-            <button type="button" class="lang-badge" data-lang="ja" onclick="switchLanguage('ja', this)">日</button>
-            <button type="button" class="lang-badge" data-lang="zh-CN" onclick="switchLanguage('zh-CN', this)">中</button>
+            <button type="button" class="lang-badge active" data-lang="ko" onclick="setActiveLang('ko', this)">한</button>
+            <button type="button" class="lang-badge" data-lang="en" onclick="setActiveLang('en', this)">EN</button>
+            <button type="button" class="lang-badge" data-lang="ja" onclick="setActiveLang('ja', this)">日</button>
+            <button type="button" class="lang-badge" data-lang="zh-CN" onclick="setActiveLang('zh-CN', this)">中</button>
         </div>
 
         <!-- 상단 2열 배치 (왼쪽 타이틀 + 오른쪽 대표작 복, 산) -->
@@ -246,50 +235,15 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'ko',
-                includedLanguages: 'ko,en,ja,zh-CN',
-                autoDisplay: false
-            }, 'google_translate_element_hidden');
-        }
-
-        function setActiveButton(lang, btnEl) {
+    <script>
+        function setActiveLang(lang, btnEl) {
             document.querySelectorAll('.lang-badge').forEach(function (el) {
                 el.classList.remove('active');
             });
             if (btnEl) {
                 btnEl.classList.add('active');
-            } else {
-                var target = document.querySelector('.lang-badge[data-lang="' + lang + '"]');
-                if (target) target.classList.add('active');
             }
-        }
-
-        function applyGoogleTranslate(lang) {
-            var select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = lang;
-                select.dispatchEvent(new Event('change'));
-                return true;
-            }
-            return false;
-        }
-
-        function switchLanguage(lang, btnEl) {
-            setActiveButton(lang, btnEl);
-            if (applyGoogleTranslate(lang)) return;
-
-            var attempts = 0;
-            var timer = setInterval(function () {
-                attempts++;
-                if (applyGoogleTranslate(lang) || attempts >= 25) {
-                    clearInterval(timer);
-                }
-            }, 200);
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
